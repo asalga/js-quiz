@@ -9,13 +9,13 @@ body {}
 }
 
 .question {
-    font-family: monospace;
+    /*font-family: monospace;*/
     font-size: 1.5em;
     margin-bottom: 20px;
 }
 
 .answer {
-    display: none;
+    /*display: none;*/
 }
 
 .show {

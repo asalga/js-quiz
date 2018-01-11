@@ -9,39 +9,7 @@
                 "note": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
                 "code": [
                     [
-                        "console.log( (function(){}()) );"
-                    ]
-                ]
-            },
-
-  {
-                "note": ".....If you omit the return statement, <b>undefined</b> is returned implicitly.",
-                "code": [
-                    [
-                        "console.log( (function(){}()) );"
-                    ]
-                ]
-            }
-
-        ],
-            "tags": "function",
-            "complexity": "0",
-            "references": [],
-            "notes": ""
-        },
-
-
-        {
-            "id": 2,
-            "name": "way to create a function",
-            "q": "Provide different ways of creating a function.",
-
-            "a": [
-            {
-                "note": "In JavaScript, you can create functions in several ways.",
-                "code": [
-                    [
-                        "// function declaration\nfunction foo(x, y){return x+y;}"
+                        "console.log( (function(){}()) );\n▶ undefined"
                     ]
                 ]
             }],
@@ -49,8 +17,38 @@
             "complexity": "0",
             "references": [],
             "notes": ""
+        },
+
+        {
+            "id": 2,
+            "name": "way to create a function",
+            "q": "Provide different ways of creating a function.",
+            "a": [
+                {
+                    "note": "In JavaScript, you can create functions in several ways.",
+                    "code": [
+                        "// function declaration\n",
+                        "function foo(x, y){return x+y;}\n\n",
+                        "// function expression\n",
+                        "var foo = function(x, y){return x + y;}\n\n",
+                        "// using Function\n",
+                        "var foo = new Function('x', 'y', 'return x + y;');\n\n",
+                        "// arrow function\n",
+                        "(x, y) => {return x + y;}"
+                    ]
+                },
+                {
+                    "note": "In JavaScript, you can create functions in several ways.",
+                    "code": [
+
+                        "(x, y) => {return x + y;}"
+                    ]
+                }
+            ],
+            "tags": "function",
+            "complexity": "0",
+            "references": [],
+            "notes": ""
         }
-
-
     ]
 }

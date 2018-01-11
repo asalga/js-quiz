@@ -1,5 +1,6 @@
 /*
     Andor Saga
+    Jan 2018
 */
 
 function createEl(tag) {
@@ -19,16 +20,22 @@ function addQuestion(container, v) {
     q.innerHTML = v.q;
     qContainer.appendChild(q);
 
+    //
     if (v.a && v.a[0].code) {
-        //console.log(v.a);
+        
+        // 
         v.a.forEach(answers => {
-            console.log(answers);
+
+            let a = createEl('div');
+            a.className = "answer";
+            a.innerHTML = v.a[0].note;
+            qContainer.appendChild(a);
 
             let textarea = createEl('textarea');
             textarea.className = "answer";
-            textarea.innerHTML = answers.code;
+            textarea.innerHTML = answers.code.join('');
+            
             qContainer.appendChild(textarea);
-
             qContainer.appendChild(createEl('br'));
 
             CodeMirror.fromTextArea(textarea, {
