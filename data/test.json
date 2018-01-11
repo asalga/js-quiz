@@ -50,7 +50,7 @@
                     "(x, y) => {return x + y;}"
                 ],
                 [
-                    "// function expression/definition"
+                    "// function expression/definition",
                     "var foo = function(x, y){return x + y;}"
                 ],
                 [
@@ -119,8 +119,7 @@
                     "  nums.forEach( function(){",
                     "    // `this` is the the global object / undefined in strict mode",
                     "  });",
-                    "});",
-
+                    "});"
                 ]
             }],
             "tags": "function,es6,arrow functions",
@@ -157,7 +156,7 @@
                     "var Person = function(){};",
                     "new Person; // ok",
                     "var Person = ()=>{};",
-                    "new Person; // TypeError: Person is not a constructor",
+                    "new Person; // TypeError: Person is not a constructor"
                 ]
             }],
             "tags": "arrow function",
@@ -179,7 +178,90 @@
             "see-also": "6"
         },
 
+        {
+            "id": 8,
+            "name": "arrow function in other languages",
+            "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
+            "a": [],
+            "tags": "arrow function",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
 
+        {
+            "id": 9,
+            "name": "es6 string methods",
+            "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "startsWith()",
+                    ".endsWith()",
+                    ".contains()",
+                    ".repeat()"
+                ]
+            }],
+            "tags": "es6,string",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
 
+        {
+            "id": 10,
+            "name": "String.raw",
+            "q": "What is String.raw?",
+            "a": [
+            {
+                "note": "",
+                "code": []
+            }],
+            "tags": "es6,string",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 11,
+            "name": "typeof``",
+            "q": "What does typeof `` return?",
+            "a": [
+            {
+                "note": "",
+                "code": ["string"]
+            }],
+            "tags": "es6,string",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 12,
+            "name": "example of string interpolation",
+            "q": "Provide an example of string interpolation using coordinates.",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "function printCoords(x,y,z){",
+                    "  console.log('['+x +', '+y+', '+z+']');",
+                    "  console.log(`[${x}, ${y}, ${z}]`);",
+                    "}"
+                ]
+            }],
+            "tags": "es6,string",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        }
     ]
 }
