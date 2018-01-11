@@ -1,24 +1,6 @@
 {
     "questions": [
         {
-            "id": -1,
-            "name": "template",
-            "q": "",
-            "a": [
-            {
-                "note": "",
-                "code": [
-                    ""
-                ]
-            }],
-            "tags": "",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
             "id": 1,
             "name": "No return statement",
             "q": "If a return statment is not present in a function body, what does it return if called?",
