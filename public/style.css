@@ -1,10 +1,31 @@
 body {}
 
+.qContainer {
+    background-color: #ddd;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
 .question {
-    color: #000;
     font-family: monospace;
     font-size: 1.5em;
     margin-bottom: 20px;
 }
 
-.answer {}
+.answer {
+    /*display: none;*/
+}
+
+.show {
+    color: blue;
+    cursor: pointer;
+}
+
+.CodeMirror,
+.CodeMirror .cm-s-default {
+    height: auto !important;
+}
+
+#test {}

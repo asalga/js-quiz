@@ -3,14 +3,29 @@
 
 <head>
     <title>js quiz</title>
-    <script language="javascript" src="js/index.js"></script>
-    <link rel="stylesheet" href="style.css"/>
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/codemirror.js"></script>
+    <script src="mode/markdown/js.js"></script>
+    <!-- <script src="mode/xml/xml.js"></script> -->
 </head>
 
 <body>
+    <textarea id="test">
+let a = 42;
+function foo(){}
+let f = function blah(){};</textarea>
+    <script>
+    var a = document.getElementById('test');
+    var editor = CodeMirror.fromTextArea(a, {
+        lineNumbers: true,
+        readOnly: true
+    });
+    </script>
     <h1>JS Quiz</h1>
     <div id='questions'></div>
 </body>
 
 </html>
+<link rel="stylesheet" href="lib/codemirror.css">
+<script language="javascript" src="js/index.js"></script>

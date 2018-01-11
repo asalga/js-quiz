@@ -1,16 +1,39 @@
+/*
+    Andor Saga
+*/
+
 function createEl(tag) {
     return document.createElement(tag);
 }
 
+function addQuestion(container, v) {
+    let qContainer = createEl('div');
+    qContainer.className = "qContainer";
+
+    let q = createEl('div');
+    q.className = "question";
+    q.innerHTML = v.q;
+
+    let a = createEl('div');
+    a.className = "answer";
+    a.innerHTML = v.a;
+
+    let showBtn = createEl('a');
+    showBtn.className = 'show';
+    showBtn.innerHTML = 'show';
+    showBtn.onclick = function() {};
+
+    qContainer.appendChild(q);
+    qContainer.appendChild(showBtn);
+    qContainer.appendChild(a);
+    container.appendChild(qContainer);
+}
+
 function populateDOM(json) {
-    var el = document.getElementById('questions');
+    var questionsDiv = document.getElementById('questions');
 
-    json.questions.forEach((v, i, a) => {
-        let div = createEl('div');
-        div.className = "question";
-        div.innerHTML = v.q;
-
-        el.appendChild(div);
+    json.questions.forEach((v, i, arr) => {
+        addQuestion(questionsDiv, v);
     });
 }
 

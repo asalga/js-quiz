@@ -470,10 +470,7 @@
             "q": [
             {
                 "note": "Is it possible to create an object without a prototype?",
-                "code": [
-                    "console.log(a);",
-                    "var a = 10;"
-                ]
+                "code": []
             }],
             "a": [
             {
