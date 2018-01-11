@@ -8,9 +8,8 @@
             {
                 "note": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
                 "code": [
-                    [
-                        "console.log( (function(){}()) );\n▶ undefined"
-                    ]
+                    "console.log( (function(){}()) );\n",
+                    "▶ undefined"
                 ]
             }],
             "tags": "function",
@@ -24,31 +23,100 @@
             "name": "way to create a function",
             "q": "Provide different ways of creating a function.",
             "a": [
-                {
-                    "note": "In JavaScript, you can create functions in several ways.",
-                    "code": [
-                        "// function declaration\n",
-                        "function foo(x, y){return x+y;}\n\n",
-                        "// function expression\n",
-                        "var foo = function(x, y){return x + y;}\n\n",
-                        "// using Function\n",
-                        "var foo = new Function('x', 'y', 'return x + y;');\n\n",
-                        "// arrow function\n",
-                        "(x, y) => {return x + y;}"
-                    ]
-                },
-                {
-                    "note": "In JavaScript, you can create functions in several ways.",
-                    "code": [
-
-                        "(x, y) => {return x + y;}"
-                    ]
-                }
-            ],
+            {
+                "note": "In JavaScript, you can create functions in several ways.",
+                "code": [
+                    "// function declaration\n",
+                    "function foo(x, y){return x+y;}\n\n",
+                    "// function expression\n",
+                    "var foo = function(x, y){return x + y;}\n\n",
+                    "// using Function\n",
+                    "var foo = new Function('x', 'y', 'return x + y;');\n\n",
+                    "// arrow function\n",
+                    "(x, y) => {return x + y;}"
+                ]
+            },
+            {
+                "note": "In JavaScript, you can create functions in several ways.",
+                "code": [
+                    "(x, y) => {return x + y;}"
+                ]
+            }],
             "tags": "function",
             "complexity": "0",
             "references": [],
             "notes": ""
+        },
+
+        {
+            "id": 3,
+            "name": "function expression vs. function declaration",
+            "q": "What is the difference between function expressions and function declarations?",
+            "a": [
+            {
+                "note": "Function declarations have names and are <i>hoisted</i>. Function expressions can exist anywhere where a valid expression can exist. Function expressions do not require a name.",
+                "code": [
+                    "// Another way to create a function is by writing a function expression.\n",
+                    "// Note that it is called an expression since it evaluates to a value.\n",
+                    "function funcDeclaration(){\n",
+                    "  return 42;\n",
+                    "}"
+                ]
+            },
+            {
+                "note": "When writing a function expression, you may assign a name to the function. This is helpful in debugging as well as it allows your function to be called recursively.",
+                "code": [
+                    "// Note, that this name can only be used within the function body.\n",
+                    "var f = function foo(){\n",
+                    "  foo; //ok here\n",
+                    "}\n",
+                    "foo;\n",
+                    "▶ Uncaught ReferenceError: foo is not defined"
+                ]
+            }],
+            "tags": "function",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+
+        {
+            "id": 4,
+            "name": "arrow function benefits",
+            "q": "What are the benefits of arrow functions?",
+            "a": [
+            {
+                "note": "Firstly, arrow functions are less verbose than function expressions.",
+                "code": [
+                    "[1,2,3].forEach(function(val){\n",
+                    "  console.log(val);\n",
+                    "});\n",
+                    "// v.s.\n",
+                    "[1,2,3].forEach(val => console.log(val));"
+                ]
+            },
+            {
+                "note": "Second, within arrow functions, their `this` variable is lexically bound. It isn’t necessary to create a temporary `that` variable.",
+                "code": [
+                    "var nums = [1,2,3];\n",
+                    "var t = document.getElementById('id');\n",
+                    "t.addEventListener('click', function(){",
+                    "  // `this` is the HTML Node\n",
+                    "\n",
+                    "  nums.forEach( function(){\n",
+                    "    // `this` is the the global object / undefined in strict mode\n",
+                    "  });\n",
+                    "});"
+                ]
+            }],
+            "tags": "function,es6,arrow functions",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
         }
+
     ]
 }
