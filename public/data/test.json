@@ -4,484 +4,53 @@
             "id": 1,
             "name": "No return statement",
             "q": "If a return statment is not present in a function body, what does it return if called?",
-            "a": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
-            "snippets": [
-                [
-                    "console.log( (function(){}()) );",
-                    "// undefined"
+            "a": [
+            {
+                "note": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
+                "code": [
+                    [
+                        "console.log( (function(){}()) );"
+                    ]
                 ]
-            ],
+            },
+
+  {
+                "note": ".....If you omit the return statement, <b>undefined</b> is returned implicitly.",
+                "code": [
+                    [
+                        "console.log( (function(){}()) );"
+                    ]
+                ]
+            }
+
+        ],
             "tags": "function",
             "complexity": "0",
             "references": [],
             "notes": ""
         },
+
 
         {
             "id": 2,
             "name": "way to create a function",
             "q": "Provide different ways of creating a function.",
-            "a": "In JavaScript, you can create functions in several ways.",
-            "snippets": [
-                [
-                    "// function declaration",
-                    "function foo(x, y){return x+y;}"
-                ],
-                [
-                    "// arrow function",
-                    "(x, y) => {return x + y;}"
-                ],
-                [
-                    "// function expression/definition",
-                    "var foo = function(x, y){return x + y;}"
-                ],
-                [
-                    "// using Function",
-                    "var foo = new Function('x', 'y', 'return x + y;');"
+
+            "a": [
+            {
+                "note": "In JavaScript, you can create functions in several ways.",
+                "code": [
+                    [
+                        "// function declaration\nfunction foo(x, y){return x+y;}"
+                    ]
                 ]
-            ],
+            }],
             "tags": "function",
             "complexity": "0",
             "references": [],
             "notes": ""
-        },
-
-        {
-            "id": 3,
-            "name": "function expression vs. function declaration",
-            "q": "What is the difference between function expressions and function declarations?",
-            "a": "Function declarations have names and are <i>hoisted</i>. Function expressions can exist anywhere where a valid expression can exist. Function expressions do not require a name.",
-            "snippets": [
-                [
-                    "// Another way to create a function is by writing a function expression. Note that it is called an expression since it evaluates to a value.",
-                    "function funcDeclaration(){",
-                    "  return 42;",
-                    "}"
-                ],
-                [
-                    "// When writing a function expression, you may assign a name to the function. This is helpful in debugging as well as it allows your function to be called recursively.",
-                    "// Note, that this name can only be used within the function body.",
-                    "var f = function foo(){",
-                    "  foo; //ok here",
-                    "}",
-                    "foo;",
-                    "// > Uncaught ReferenceError: foo is not defined"
-                ]
-            ],
-            "tags": "function",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 4,
-            "name": "arrow function benefits",
-            "q": "What are the benefits of arrow functions?",
-            "a": [
-            {
-                "note": "Firstly, arrow functions are less verbose than function expressions.",
-                "code": [
-                    "[1,2,3].forEach(function(val){",
-                    "  console.log(val);",
-                    "});",
-                    "// v.s.",
-                    "[1,2,3].forEach(val => console.log(val));"
-                ]
-            },
-            {
-                "note": "Second, within arrow functions, their `this` variable is lexically bound. It isn’t necessary to create a temporary `that` variable.",
-                "code": [
-                    "var nums = [1,2,3];",
-                    "var t = document.getElementById('id');",
-                    "t.addEventListener('click', function(){",
-                    "  // `this` is the HTML Node",
-                    "  ",
-                    "  nums.forEach( function(){",
-                    "    // `this` is the the global object / undefined in strict mode",
-                    "  });",
-                    "});"
-                ]
-            }],
-            "tags": "function,es6,arrow functions",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 5,
-            "name": "when to avoid arrow functions",
-            "q": "When should arrow functions be avoided?",
-            "a": [
-            {
-                "note": "Arrow functions are perfect for short functions, one-liners. The longer the function, the less arrow functions help.",
-                "code": []
-            }],
-            "tags": "function,es6,arrow function",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 6,
-            "name": "invalid places for arrow functions",
-            "q": "In what situations can you <b>not</b> use arrow functions?",
-            "a": [
-            {
-                "note": "You cannot use arrow functions as constructor functions.",
-                "code": [
-                    "var Person = function(){};",
-                    "new Person; // ok",
-                    "var Person = ()=>{};",
-                    "new Person; // TypeError: Person is not a constructor"
-                ]
-            }],
-            "tags": "arrow function",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": "7"
-        },
-
-        {
-            "id": 7,
-            "name": "arrow function constructors",
-            "q": "Why can’t arrow functions be used at constructor functions?",
-            "a": [],
-            "tags": "arrow function",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": "6"
-        },
-
-        {
-            "id": 8,
-            "name": "arrow function in other languages",
-            "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
-            "a": [],
-            "tags": "arrow function",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 9,
-            "name": "es6 string methods",
-            "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
-            "a": [
-            {
-                "note": "",
-                "code": [
-                    "startsWith()",
-                    ".endsWith()",
-                    ".contains()",
-                    ".repeat()"
-                ]
-            }],
-            "tags": "es6,string",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 10,
-            "name": "String.raw",
-            "q": "What is String.raw?",
-            "a": [
-            {
-                "note": "",
-                "code": []
-            }],
-            "tags": "es6,string",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 11,
-            "name": "typeof``",
-            "q": "What does typeof `` return?",
-            "a": [
-            {
-                "note": "",
-                "code": ["string"]
-            }],
-            "tags": "es6,string",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 12,
-            "name": "example of string interpolation",
-            "q": "Provide an example of string interpolation using coordinates.",
-            "a": [
-            {
-                "note": "",
-                "code": [
-                    "function printCoords(x,y,z){",
-                    "  console.log('['+x +', '+y+', '+z+']');",
-                    "  console.log(`[${x}, ${y}, ${z}]`);",
-                    "}"
-                ]
-            }],
-            "tags": "es6,string",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 13,
-            "name": "Way to create empty array",
-            "q": "List 5 ways to instantiate an empty array",
-            "a": [
-            {
-                "note": "",
-                "code": [
-                    "new Array(0);   // explicit size of zero",
-                    "new Array();    // implicit size of zero",
-                    "new Array;      // we can omit parenthesies",
-                    "Array();        // omit 'new'",
-                    "[];             // literal notation"
-                ]
-            }],
-            "tags": "array",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 14,
-            "name": "How much faster are TypedArrays than Arrays?",
-            "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
-            "a": [],
-            "tags": "array",
-            "complexity": "0",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 14,
-            "name": "How much faster are TypedArrays than Arrays?",
-            "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
-            "a": [],
-            "tags": "array",
-            "complexity": "0",
-            "references": [
-                "https://jsperf.com/typed-arrays-vs-arrays/7",
-                "http://ryanmcdermott.me/typed-arrays/"
-            ],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 15,
-            "name": "es5 methods",
-            "q": "What are 9 array methods introduced in es5?",
-            "a": [
-            {
-                "note": "",
-                "code": [
-                    "forEach, indexOf, lastIndexOf",
-                    "map, reduce, reduceRight",
-                    "filter,every, some"
-                ]
-            }],
-            "tags": "",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 16,
-            "name": "Sort with undefined",
-            "q": "What happens when you sort an array with undefined values?",
-            "a": [
-            {
-                "note": "The undefined values will be moved to the end of the array.",
-                "code": [
-                    "[,,3,2,1].sort();",
-                    "> [1, 2, 3, empty × 2]"
-                ]
-            }],
-            "tags": "sort,array",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 17,
-            "name": "alpha sort",
-            "q": "[111,22,3].sort() results in an incorrect value. How could you fix this?",
-            "a": [
-            {
-                "note": "Sort needs to be passed a predicate.",
-                "code": [
-                    "[111,22,3].sort( (n,m)=> n-m );",
-                    "> [3, 22, 111]"
-                ]
-            }],
-            "tags": "sort,array",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 18,
-            "name": "sort algorithm",
-            "q": "What algorithm does the built-in sort method use? ",
-            "a": [
-            {
-                "note": " It really depends on browser implementation. Could either a quicksort or mergesort or whatever the vendor has implemented.",
-                "code": []
-            }],
-            "tags": "sort",
-            "complexity": "",
-            "references": [
-                "https://stackoverflow.com/questions/234683/javascript-array-sort-implementation"
-            ],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 19,
-            "name": "Arrays are slow",
-            "q": "Why are Arrays said to be slow in JS?",
-            "a": [
-            {
-                "note": "",
-                "code": []
-            }],
-            "tags": "array",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 20,
-            "name": "Null v.s. Undefined",
-            "q": "What is the difference between null and undefined",
-            "a": [
-            {
-                "note": "",
-                "code": []
-            }],
-            "tags": "array",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 21,
-            "name": "",
-            "q": [
-            {
-                "note": "What is the output of the following snippet?",
-                "code": [
-                    "console.log(a);",
-                    "var a = 10;"
-                ]
-            }],
-            "a": [
-            {
-                "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
-                "code": []
-            }],
-            "tags": "variable",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 22,
-            "name": "",
-            "q": [
-            {
-                "note": "If calling a constructor function, are parentheses still required?",
-                "code": [
-                    "console.log(a);",
-                    "var a = 10;"
-                ]
-            }],
-            "a": [
-            {
-                "note": "No. You may omit the parentheses if no arguments are passed into a constructor function.",
-                "code": [
-                    "new Image;",
-                    "new Array;",
-                    "new Date;",
-                    "new Map;",
-                    "// ..."
-                ]
-            },
-            {
-                "note": "Also, you may optionally omit 'new', in which case you need to use parentheses",
-                "code": [
-                    "Image();",
-                    "Array();",
-                    "Date();",
-                    "// ..."
-                ]
-            }],
-            "tags": "variable",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
-        },
-
-        {
-            "id": 23,
-            "name": "",
-            "q": [
-            {
-                "note": "Is it possible to create an object without a prototype?",
-                "code": []
-            }],
-            "a": [
-            {
-                "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
-                "code": []
-            }],
-            "tags": "variable",
-            "complexity": "",
-            "references": [],
-            "notes": "",
-            "see-also": ""
         }
+
+
     ]
 }

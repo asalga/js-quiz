@@ -7,25 +7,44 @@ function createEl(tag) {
 }
 
 function addQuestion(container, v) {
+
+    // Question container that holds the the question along
+    // with the answer and code
     let qContainer = createEl('div');
     qContainer.className = "qContainer";
+    container.appendChild(qContainer);
 
     let q = createEl('div');
     q.className = "question";
     q.innerHTML = v.q;
+    qContainer.appendChild(q);
 
-    let a = createEl('div');
-    a.className = "answer";
-    a.innerHTML = v.a;
+    if (v.a && v.a[0].code) {
+        //console.log(v.a);
+        v.a.forEach(answers => {
+            console.log(answers);
+
+            let textarea = createEl('textarea');
+            textarea.className = "answer";
+            textarea.innerHTML = answers.code;
+            qContainer.appendChild(textarea);
+
+            qContainer.appendChild(createEl('br'));
+
+            CodeMirror.fromTextArea(textarea, {
+                lineNumbers: true,
+                readOnly: true
+            });
+        });
+    }
 
     let showBtn = createEl('a');
     showBtn.className = 'show';
     showBtn.innerHTML = 'show';
     showBtn.onclick = function() {};
 
-    qContainer.appendChild(q);
     qContainer.appendChild(showBtn);
-    qContainer.appendChild(a);
+
     container.appendChild(qContainer);
 }
 
