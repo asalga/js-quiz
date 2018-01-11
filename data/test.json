@@ -1,8 +1,8 @@
 {
     "questions": [
         {
-            "id": 0,
-            "name": "",
+            "id": -1,
+            "name": "template",
             "q": "",
             "a": [
             {
@@ -20,7 +20,7 @@
 
         {
             "id": 1,
-            "name": "no return statement",
+            "name": "No return statement",
             "q": "If a return statment is not present in a function body, what does it return if called?",
             "a": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
             "snippets": [
@@ -73,14 +73,14 @@
                 [
                     "// Another way to create a function is by writing a function expression. Note that it is called an expression since it evaluates to a value.",
                     "function funcDeclaration(){",
-                    "return 42;",
+                    "  return 42;",
                     "}"
                 ],
                 [
                     "// When writing a function expression, you may assign a name to the function. This is helpful in debugging as well as it allows your function to be called recursively.",
                     "// Note, that this name can only be used within the function body.",
                     "var f = function foo(){",
-                    "foo; //ok here",
+                    "  foo; //ok here",
                     "}",
                     "foo;",
                     "// > Uncaught ReferenceError: foo is not defined"
@@ -259,6 +259,247 @@
             }],
             "tags": "es6,string",
             "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 13,
+            "name": "Way to create empty array",
+            "q": "List 5 ways to instantiate an empty array",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "new Array(0);   // explicit size of zero",
+                    "new Array();    // implicit size of zero",
+                    "new Array;      // we can omit parenthesies",
+                    "Array();        // omit 'new'",
+                    "[];             // literal notation"
+                ]
+            }],
+            "tags": "array",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 14,
+            "name": "How much faster are TypedArrays than Arrays?",
+            "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
+            "a": [],
+            "tags": "array",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 14,
+            "name": "How much faster are TypedArrays than Arrays?",
+            "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
+            "a": [],
+            "tags": "array",
+            "complexity": "0",
+            "references": [
+                "https://jsperf.com/typed-arrays-vs-arrays/7",
+                "http://ryanmcdermott.me/typed-arrays/"
+            ],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 15,
+            "name": "es5 methods",
+            "q": "What are 9 array methods introduced in es5?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "forEach, indexOf, lastIndexOf",
+                    "map, reduce, reduceRight",
+                    "filter,every, some"
+                ]
+            }],
+            "tags": "",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 16,
+            "name": "Sort with undefined",
+            "q": "What happens when you sort an array with undefined values?",
+            "a": [
+            {
+                "note": "The undefined values will be moved to the end of the array.",
+                "code": [
+                    "[,,3,2,1].sort();",
+                    "> [1, 2, 3, empty × 2]"
+                ]
+            }],
+            "tags": "sort,array",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 17,
+            "name": "alpha sort",
+            "q": "[111,22,3].sort() results in an incorrect value. How could you fix this?",
+            "a": [
+            {
+                "note": "Sort needs to be passed a predicate.",
+                "code": [
+                    "[111,22,3].sort( (n,m)=> n-m );",
+                    "> [3, 22, 111]"
+                ]
+            }],
+            "tags": "sort,array",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 18,
+            "name": "sort algorithm",
+            "q": "What algorithm does the built-in sort method use? ",
+            "a": [
+            {
+                "note": " It really depends on browser implementation. Could either a quicksort or mergesort or whatever the vendor has implemented.",
+                "code": []
+            }],
+            "tags": "sort",
+            "complexity": "",
+            "references": [
+                "https://stackoverflow.com/questions/234683/javascript-array-sort-implementation"
+            ],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 19,
+            "name": "Arrays are slow",
+            "q": "Why are Arrays said to be slow in JS?",
+            "a": [
+            {
+                "note": "",
+                "code": []
+            }],
+            "tags": "array",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 20,
+            "name": "Null v.s. Undefined",
+            "q": "What is the difference between null and undefined",
+            "a": [
+            {
+                "note": "",
+                "code": []
+            }],
+            "tags": "array",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 21,
+            "name": "",
+            "q": [
+            {
+                "note": "What is the output of the following snippet?",
+                "code": [
+                    "console.log(a);",
+                    "var a = 10;"
+                ]
+            }],
+            "a": [
+            {
+                "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
+                "code": []
+            }],
+            "tags": "variable",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 22,
+            "name": "",
+            "q": [
+            {
+                "note": "If calling a constructor function, are parentheses still required?",
+                "code": [
+                    "console.log(a);",
+                    "var a = 10;"
+                ]
+            }],
+            "a": [
+            {
+                "note": "No. You may omit the parentheses if no arguments are passed into a constructor function.",
+                "code": [
+                    "new Image;",
+                    "new Array;",
+                    "new Date;",
+                    "new Map;",
+                    "// ..."
+                ]
+            },
+            {
+                "note": "Also, you may optionally omit 'new', in which case you need to use parentheses",
+                "code": [
+                    "Image();",
+                    "Array();",
+                    "Date();",
+                    "// ..."
+                ]
+            }],
+            "tags": "variable",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 23,
+            "name": "",
+            "q": [
+            {
+                "note": "Is it possible to create an object without a prototype?",
+                "code": [
+                    "console.log(a);",
+                    "var a = 10;"
+                ]
+            }],
+            "a": [
+            {
+                "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
+                "code": []
+            }],
+            "tags": "variable",
+            "complexity": "",
             "references": [],
             "notes": "",
             "see-also": ""
