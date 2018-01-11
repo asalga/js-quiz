@@ -21,27 +21,27 @@ function addQuestion(container, v) {
     qContainer.appendChild(q);
 
     //
-    if (v.a && v.a[0].code) {
-        
-        // 
-        v.a.forEach(answers => {
+    if (v.a) {
+        // A question may have a number of answers
+        v.a.forEach((answer, i) => {
+            let ansContainer = createEl('div');
+            // ansContainer.className = "answers";
+            ansContainer.innerHTML = answer.note;
 
-            let a = createEl('div');
-            a.className = "answer";
-            a.innerHTML = v.a[0].note;
-            qContainer.appendChild(a);
+            qContainer.appendChild(ansContainer);
 
-            let textarea = createEl('textarea');
-            textarea.className = "answer";
-            textarea.innerHTML = answers.code.join('');
-            
-            qContainer.appendChild(textarea);
-            qContainer.appendChild(createEl('br'));
+            // Not all answer have code examples, so we only want to
+            // add a textarea if needed.
+            if (answer.code) {
+                let textarea = createEl('textarea');
+                textarea.className = "answer";
+                textarea.innerHTML = answer.code.join('');
 
-            CodeMirror.fromTextArea(textarea, {
-                lineNumbers: true,
-                readOnly: true
-            });
+                qContainer.appendChild(textarea);
+                qContainer.appendChild(createEl('br'));
+
+                CodeMirror.fromTextArea(textarea, { lineNumbers: true, readOnly: true });
+            }
         });
     }
 
@@ -51,7 +51,6 @@ function addQuestion(container, v) {
     showBtn.onclick = function() {};
 
     qContainer.appendChild(showBtn);
-
     container.appendChild(qContainer);
 }
 

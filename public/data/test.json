@@ -116,7 +116,23 @@
             "references": [],
             "notes": "",
             "see-also": ""
+        },
+
+        {
+            "id": 5,
+            "name": "when to avoid arrow functions",
+            "q": "When should arrow functions be avoided?",
+            "a": [
+            {
+                "note": "Arrow functions are perfect for short functions, one-liners. The longer the function, the less arrow functions help."
+            }],
+            "tags": "function,es6,arrow function",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
         }
+
 
     ]
 }
