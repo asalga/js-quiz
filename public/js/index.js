@@ -3,55 +3,67 @@
     Jan 2018
 */
 
-import {createEl} from './utils.js';
-
-function addQuestion(container, v) {
+/*
+    container
+    value
+*/
+function addQuestion(c, v) {
+    let container = $(c);
 
     // Question container that holds the the question along
     // with the answer and code
-    let qContainer = createEl('div');
-    qContainer.className = "qContainer";
-    container.appendChild(qContainer);
+    let qContainer = $('<div>').addClass('qContainer');
+    container.append(qContainer);
 
-    let q = createEl('div');
-    q.className = "question";
-    q.innerHTML = v.q;
-    qContainer.appendChild(q);
+    // question
+    let q = $('<div>').addClass('question').html(v.q);
+    qContainer.append(q);
 
     //
     if (v.a) {
         // A question may have a number of answers
         v.a.forEach((answer, i) => {
 
-            let ansContainer = $('<div>');
-            // ansContainer.className = "answers";
-            ansContainer.html(answer.note);
+            let ansContainer = $('<div>')
+                .addClass('answer')
+                .html(answer.note);
 
-            qContainer.appendChild(ansContainer[0]);
+            qContainer.append(ansContainer);
 
             // Not all answer have code examples, so we only want to
             // add a textarea if needed.
             if (answer.code) {
-                let textarea = $('<textarea>');
-                textarea.addClass('answer');
-                textarea.html(answer.code.join(''));
+                let textarea = $('<textarea>')
+                    .addClass('answerCode')
+                    .html(answer.code.join(''));
 
-                qContainer.appendChild(textarea[0]);
-                qContainer.appendChild($('<br/>')[0]);
+                ansContainer.append(textarea);
+                ansContainer.append($('<br/>'));
+                ansContainer.css({ 'visibility': 'hidden' })
 
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
             }
         });
     }
 
-    let showBtn = $('<a>');
-    console.log(showBtn[0].className = 'show');
-    showBtn.html('answer');
-    showBtn.click(function(){
-    });
+    let showBtn = $('<a>')
+        .addClass('show')
+        .html('show')
+        .click(function() {
+            let text = $(this).html();
 
-    qContainer.appendChild(showBtn[0]);
-    container.appendChild(qContainer);
+            if (text === 'show') {
+                $(this).siblings('.answer').css({ 'visibility': 'visible' });
+                $(this).html('hide');
+            } else {
+                $(this).siblings('.answer').css({ 'visibility': 'hidden' });
+                $(this).html('show');
+            }
+
+        });
+
+    qContainer.append(showBtn);
+    container.append(qContainer);
 }
 
 function populateDOM(json) {
