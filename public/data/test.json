@@ -13,8 +13,9 @@
                 ]
             }],
             "tags": "function",
-            "complexity": "0",
+            "complexity": "1",
             "references": [],
+            "grade": "10",
             "notes": ""
         },
 
@@ -27,7 +28,7 @@
                 "note": "In JavaScript, you can create functions in several ways.",
                 "code": [
                     "// function declaration\n",
-                    "function foo(x, y){return x+y;}\n\n",
+                    "function foo(x, y){return x + y;}\n\n",
                     "// function expression\n",
                     "var foo = function(x, y){return x + y;}\n\n",
                     "// using Function\n",
@@ -35,16 +36,11 @@
                     "// arrow function\n",
                     "(x, y) => {return x + y;}"
                 ]
-            },
-            {
-                "note": "In JavaScript, you can create functions in several ways.",
-                "code": [
-                    "(x, y) => {return x + y;}"
-                ]
             }],
             "tags": "function",
-            "complexity": "0",
+            "complexity": "4",
             "references": [],
+            "grade": 7,
             "notes": ""
         },
 
