@@ -3,9 +3,7 @@
     Jan 2018
 */
 
-function createEl(tag) {
-    return document.createElement(tag);
-}
+import {createEl} from './utils.js';
 
 function addQuestion(container, v) {
 
@@ -24,33 +22,35 @@ function addQuestion(container, v) {
     if (v.a) {
         // A question may have a number of answers
         v.a.forEach((answer, i) => {
-            let ansContainer = createEl('div');
-            // ansContainer.className = "answers";
-            ansContainer.innerHTML = answer.note;
 
-            qContainer.appendChild(ansContainer);
+            let ansContainer = $('<div>');
+            // ansContainer.className = "answers";
+            ansContainer.html(answer.note);
+
+            qContainer.appendChild(ansContainer[0]);
 
             // Not all answer have code examples, so we only want to
             // add a textarea if needed.
             if (answer.code) {
-                let textarea = createEl('textarea');
-                textarea.className = "answer";
-                textarea.innerHTML = answer.code.join('');
+                let textarea = $('<textarea>');
+                textarea.addClass('answer');
+                textarea.html(answer.code.join(''));
 
-                qContainer.appendChild(textarea);
-                qContainer.appendChild(createEl('br'));
+                qContainer.appendChild(textarea[0]);
+                qContainer.appendChild($('<br/>')[0]);
 
-                CodeMirror.fromTextArea(textarea, { lineNumbers: true, readOnly: true });
+                CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
             }
         });
     }
 
-    let showBtn = createEl('a');
-    showBtn.className = 'show';
-    showBtn.innerHTML = 'show';
-    showBtn.onclick = function() {};
+    let showBtn = $('<a>');
+    console.log(showBtn[0].className = 'show');
+    showBtn.html('answer');
+    showBtn.click(function(){
+    });
 
-    qContainer.appendChild(showBtn);
+    qContainer.appendChild(showBtn[0]);
     container.appendChild(qContainer);
 }
 

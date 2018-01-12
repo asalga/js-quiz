@@ -131,8 +131,27 @@
             "references": [],
             "notes": "",
             "see-also": ""
+        },
+
+        {
+            "id": 6,
+            "name": "invalid places for arrow functions",
+            "q": "In what situations can you <b>not</b> use arrow functions?",
+            "a": [
+            {
+                "note": "You cannot use arrow functions as constructor functions.",
+                "code": [
+                    "var Person = function(){};\n",
+                    "new Person; // ok\n",
+                    "var Person = ()=>{};\n",
+                    "new Person; // TypeError: Person is not a constructor"
+                ]
+            }],
+            "tags": "arrow function",
+            "complexity": "0",
+            "references": [],
+            "notes": "",
+            "see-also": "7"
         }
-
-
     ]
 }
