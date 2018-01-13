@@ -166,7 +166,7 @@
                 ]
             }],
             "tags": "array",
-            "complexity": "0",
+            "complexity": "1",
             "references": [],
             "notes": "",
             "see-also": ""
@@ -212,6 +212,58 @@
             }],
             "tags": "variable",
             "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 23,
+            "name": "",
+            "q": "What are the built-in Javascript constructors?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "Array;",
+                    "Boolean;",
+                    "Date;",
+
+                    "Error;",
+                    "Function;",
+                    "Number;",
+
+                    "Object;",
+                    "RegExp;",
+                    "String;"
+                ]
+            }],
+            "tags": "primitives",
+            "complexity": "3",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 23,
+            "name": "ways to create empty object",
+            "q": "List 7 ways to create an empty object.",
+            "a": [
+            {
+                "note": "There are several syntactic ways to create an empty object in JS",
+                "code": [
+                    "var o = {};                    // object literal",
+                    "var o = Object();              // ...or `new` can be omitted",
+                    "var o = new Object;            // ...or parenthesis can be omitted",
+                    "var o = new Object();          // call Object constructor function",
+                    "var o = new function(){};      // simple singleton pattern",
+                    "var o = Object.create({});     // call Object `create` factory method",
+                    "class Obj{};var o = new Obj(); // using ES6 class keyword"
+                ]
+            }],
+            "tags": "primitives",
+            "complexity": "3",
             "references": [],
             "notes": "",
             "see-also": ""
