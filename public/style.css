@@ -1,4 +1,11 @@
-body {}
+/*
+    Andor Saga
+*/
+
+.code {
+    font-family: monospace;
+    font-weight: 800;
+}
 
 .qContainer {
     background-color: #ddd;
@@ -27,5 +34,3 @@ body {}
 .CodeMirror .cm-s-default {
     height: auto !important;
 }
-
-#test {}

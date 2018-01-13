@@ -6,7 +6,7 @@
             "q": "If a return statment is not present in a function body, what does it return if called?",
             "a": [
             {
-                "note": "If you omit the return statement, <b>undefined</b> is returned implicitly.",
+                "note": "If you omit the return statement, <span class='code'>undefined</span> is returned implicitly.",
                 "code": [
                     "console.log( (function(){}()) );",
                     "▶ undefined"
@@ -139,7 +139,7 @@
                 "code": [
                     "var Person = function(){};",
                     "new Person; // ok",
-                    "var Person = ()=>{};",
+                    "var Person = () => {};",
                     "new Person; // TypeError: Person is not a constructor"
                 ]
             }],
@@ -180,7 +180,6 @@
             {
                 "note": "Yes. Using the Object object, you can call create() and pass in null",
                 "code": [
-
                     "var obj = Object.create(null);",
                     "console.log(obj);",
                     "▶ {",
@@ -201,22 +200,14 @@
             "q": "If calling a constructor function, are parentheses still required?",
             "a": [
             {
-                "note": "No. You may omit the parentheses if no arguments are passed into a constructor function.",
+                "note": "No. You may omit the parentheses if no arguments are passed into a constructor function. <span class='code'>this.arguments</span> will resolve to <span class='code'>undefined</span>.",
                 "code": [
                     "new Image;",
                     "new Array;",
                     "new Date;",
                     "new Map;",
-                    "// ..."
-                ]
-            },
-            {
-                "note": "Also, you may optionally omit 'new', in which case you need to use parentheses",
-                "code": [
-                    "Image();",
-                    "Array();",
-                    "Date();",
-                    "// ..."
+                    "new Set;",
+                    "// etc.."
                 ]
             }],
             "tags": "variable",
