@@ -35,7 +35,7 @@ function addQuestion(c, v) {
             if (answer.code) {
                 let textarea = $('<textarea>')
                     .addClass('answerCode')
-                    .html(answer.code.join(''));
+                    .html(answer.code.join('\n'));
 
                 ansContainer.append(textarea);
                 ansContainer.append($('<br/>'));

@@ -1,0 +1,1 @@
+What is the purpose of creating a Symbol? Why not simply use a string?
