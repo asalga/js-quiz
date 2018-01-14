@@ -173,7 +173,7 @@
         },
 
         {
-            "id": 23,
+            "id": 20,
             "name": "",
             "q": "Is it possible to create an object without a prototype?",
             "a": [
@@ -195,7 +195,7 @@
         },
 
         {
-            "id": 22,
+            "id": 21,
             "name": "",
             "q": "If calling a constructor function, are parentheses still required?",
             "a": [
@@ -218,7 +218,7 @@
         },
 
         {
-            "id": 23,
+            "id": 22,
             "name": "",
             "q": "What are the built-in Javascript constructors?",
             "a": [
@@ -265,6 +265,62 @@
             "tags": "primitives",
             "complexity": "3",
             "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 24,
+            "name": "",
+            "q": "What’s the best way to check for an undefined value?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "primitives",
+            "complexity": "3",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 25,
+            "name": "",
+            "q": "Why was arguments.callee removed from ES5 strict mode?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "primitives",
+            "complexity": "3",
+            "references": [
+                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee"
+            ],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 26,
+            "name": "",
+            "q": "What is a Promise?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "primitives",
+            "complexity": "3",
+            "references": [""],
             "notes": "",
             "see-also": ""
         }
