@@ -24,9 +24,11 @@ function addQuestion(c, v) {
         // A question may have a number of answers
         v.a.forEach((answer, i) => {
 
+            let note = answer.note.length ? answer.note.join('') : answer.note;
+
             let ansContainer = $('<div>')
                 .addClass('answer')
-                .html(answer.note);
+                .html(note);
 
             qContainer.append(ansContainer);
 
