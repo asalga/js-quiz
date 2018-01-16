@@ -6,12 +6,16 @@
     margin: 0 20px;
 }
 
-.questionID{
-    margin:-10px;
+.questionID {
+    margin: -10px;
     font-size: 8px;
     font-weight: bold;
 }
 
+.tags {
+    font-family: monospace;
+    font-size: 10px;
+}
 
 .code {
     font-family: monospace;

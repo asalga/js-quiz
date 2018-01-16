@@ -14,6 +14,7 @@ function addQuestion(c, v) {
     // with the answer and code
     let qContainer = $('<div>').addClass('qContainer');
 
+
     let idContainer = $('<div>').html(v.id).addClass('questionID');
     qContainer.append(idContainer);
 
@@ -31,7 +32,7 @@ function addQuestion(c, v) {
             let text = $(this).html();
 
             if (text === '[show]') {
-                 $(this).siblings('.answer').show(100);
+                $(this).siblings('.answer').show(100);
                 $(this).html('[hide]');
             } else {
                 $(this).siblings('.answer').hide(100);
@@ -68,12 +69,17 @@ function addQuestion(c, v) {
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
 
                 // Only after CodeMirror has finished its work, we can hide the code.
-                ansContainer.css({'display': 'none'});
+                ansContainer.css({ 'display': 'none' });
             }
         });
     }
 
-    
+    if (v.tags) {
+        let str = v.tags.split(',').map(v => `#${v} `);
+        let tags = $('<div>').addClass('tags').html(str);
+        qContainer.append(tags);
+    }
+
     container.append(qContainer);
 }
 
