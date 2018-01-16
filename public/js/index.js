@@ -13,15 +13,12 @@ function addQuestion(c, v) {
     // Question container that holds the the question along
     // with the answer and code
     let qContainer = $('<div>').addClass('qContainer');
-    
+
     let idContainer = $('<div>').html(v.id).addClass('questionID');
     qContainer.append(idContainer);
 
     container.append(qContainer);
     qContainer.attr('id', v.id);
-
-    
-
 
     // question
     let q = $('<div>').addClass('question').html(v.q);
@@ -50,7 +47,9 @@ function addQuestion(c, v) {
 
                 ansContainer.append(textarea);
                 ansContainer.append($('<br/>'));
-                ansContainer.css({ 'visibility': 'hidden' })
+
+                // ansContainer.css({ 'visibility': 'hidden' })
+                // ansContainer.css({'display': 'none'});
 
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
             }
@@ -64,10 +63,10 @@ function addQuestion(c, v) {
             let text = $(this).html();
 
             if (text === 'show') {
-                $(this).siblings('.answer').css({ 'visibility': 'visible' });
+                $(this).siblings('.answer').css({ 'display': 'block' });
                 $(this).html('hide');
             } else {
-                $(this).siblings('.answer').css({ 'visibility': 'hidden' });
+                $(this).siblings('.answer').css({ 'display': 'none' });
                 $(this).html('show');
             }
 
@@ -83,6 +82,9 @@ function populateDOM(json) {
     json.questions.forEach((v, i, arr) => {
         addQuestion(questionsDiv, v);
     });
+
+    // TODO: fix
+    $('.answer').css({ 'display': 'none' });
 }
 
 var json = fetch('data/test.json')
