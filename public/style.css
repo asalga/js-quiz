@@ -2,6 +2,17 @@
     Andor Saga
 */
 
+#questions {
+    margin: 0 20px;
+}
+
+.questionID{
+    margin:-10px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+
 .code {
     font-family: monospace;
     font-weight: 800;

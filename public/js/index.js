@@ -13,7 +13,15 @@ function addQuestion(c, v) {
     // Question container that holds the the question along
     // with the answer and code
     let qContainer = $('<div>').addClass('qContainer');
+    
+    let idContainer = $('<div>').html(v.id).addClass('questionID');
+    qContainer.append(idContainer);
+
     container.append(qContainer);
+    qContainer.attr('id', v.id);
+
+    
+
 
     // question
     let q = $('<div>').addClass('question').html(v.q);
@@ -24,7 +32,8 @@ function addQuestion(c, v) {
         // A question may have a number of answers
         v.a.forEach((answer, i) => {
 
-            let note = answer.note.length ? answer.note.join('') : answer.note;
+            // 
+            let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
 
             let ansContainer = $('<div>')
                 .addClass('answer')

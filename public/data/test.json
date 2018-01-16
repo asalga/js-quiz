@@ -52,48 +52,45 @@
             "name": "function expression vs. function declaration",
             "q": "What is the difference between function expressions and function declarations?",
             "a": [
-                {
-                    "note": "The syntactical difference between function expressions and declarations are subtle. A function expression assigns a function to a variable.",
-                    "code": [
-                        "var f = function(){};"
-                    ]
-                },
-                {
-                    "note": [
-                        "When writing a function expression, you may optionally assign a name to the function."
-                        "This is helpful in debugging as well as it allows your function to be called recursively.",
-                        "Also note that the name of the function will only be visible in the context of the function.",
-                        "Note that it is called an <i>expression</i> since it <i>evaluates</i> to a value."
-                    ],
-                    "code": [
-                        "// Note, that this name can only be used within the function body.",
-                        "var f = function foobar(){",
-                        "  console.log(foobar.name);",
-                        "}",
-                        "f();",
-                        "foobar",
-                        "▶ Uncaught ReferenceError: foobar is not defined"
-                    ]
-                },
-                {
-                    "note": "Function declarations have names and are <i>hoisted</i>. Function expressions can exist anywhere where a valid expression can exist.",
-                    "code": [
-                        "// We can call the function before the declaration because it gets hoisted.",
-                        "funcDecl();",
-                        "function funcDecl(){",
-                        "  return 42;",
-                        "}"
-                    ]
-                },
-                {
-                    "note": "Unlike function declarations, function expressions are <b>not</b> hoisted. So the following snippet results in an error.",
-                    "code": [
-                        "foo();",
-                        "var foo = function(){};",
-                        "Uncaught TypeError: foo is not a function"
-                    ]
-                }
-            ],
+            {
+                "note": "The syntactical difference between function expressions and declarations are subtle. A function expression assigns a function to a variable.",
+                "code": ["var f = function(){};"]
+            },
+            {
+                "note": [
+                    "When writing a function expression, you may optionally assign a name to the function.",
+                    "This is helpful in debugging as well as it allows your function to be called recursively.",
+                    "Also note that the name of the function will only be visible in the context of the function.",
+                    "Note that it is called an <i>expression</i> since it <i>evaluates</i> to a value."
+                ],
+                "code": [
+                    "// Note, that this name can only be used within the function body.",
+                    "var f = function foobar(){",
+                    "  console.log(foobar.name);",
+                    "}",
+                    "f();",
+                    "foobar",
+                    "▶ Uncaught ReferenceError: foobar is not defined"
+                ]
+            },
+            {
+                "note": "Function declarations have names and are <i>hoisted</i>. Function expressions can exist anywhere where a valid expression can exist.",
+                "code": [
+                    "// We can call the function before the declaration because it gets hoisted.",
+                    "funcDecl();",
+                    "function funcDecl(){",
+                    "  return 42;",
+                    "}"
+                ]
+            },
+            {
+                "note": "Unlike function declarations, function expressions are <b>not</b> hoisted. So the following snippet results in an error.",
+                "code": [
+                    "foo();",
+                    "var foo = function(){};",
+                    "Uncaught TypeError: foo is not a function"
+                ]
+            }],
             "tags": "function",
             "complexity": "0",
             "references": [],
