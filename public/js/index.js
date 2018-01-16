@@ -48,10 +48,10 @@ function addQuestion(c, v) {
                 ansContainer.append(textarea);
                 ansContainer.append($('<br/>'));
 
-                // ansContainer.css({ 'visibility': 'hidden' })
-                // ansContainer.css({'display': 'none'});
-
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
+
+                // Only after CodeMirror has finished its work, we can hide the code.
+                ansContainer.css({'display': 'none'});
             }
         });
     }
@@ -63,10 +63,10 @@ function addQuestion(c, v) {
             let text = $(this).html();
 
             if (text === 'show') {
-                $(this).siblings('.answer').css({ 'display': 'block' });
+                 $(this).siblings('.answer').show(100);
                 $(this).html('hide');
             } else {
-                $(this).siblings('.answer').css({ 'display': 'none' });
+                $(this).siblings('.answer').hide(100);
                 $(this).html('show');
             }
 
@@ -82,9 +82,6 @@ function populateDOM(json) {
     json.questions.forEach((v, i, arr) => {
         addQuestion(questionsDiv, v);
     });
-
-    // TODO: fix
-    $('.answer').css({ 'display': 'none' });
 }
 
 var json = fetch('data/test.json')
