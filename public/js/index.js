@@ -24,6 +24,23 @@ function addQuestion(c, v) {
     let q = $('<div>').addClass('question').html(v.q);
     qContainer.append(q);
 
+    let showBtn = $('<a>')
+        .addClass('show')
+        .html('[show]')
+        .click(function() {
+            let text = $(this).html();
+
+            if (text === '[show]') {
+                 $(this).siblings('.answer').show(100);
+                $(this).html('[hide]');
+            } else {
+                $(this).siblings('.answer').hide(100);
+                $(this).html('[show]');
+            }
+        });
+
+    qContainer.append(showBtn);
+
     //
     if (v.a) {
         // A question may have a number of answers
@@ -56,23 +73,7 @@ function addQuestion(c, v) {
         });
     }
 
-    let showBtn = $('<a>')
-        .addClass('show')
-        .html('show')
-        .click(function() {
-            let text = $(this).html();
-
-            if (text === 'show') {
-                 $(this).siblings('.answer').show(100);
-                $(this).html('hide');
-            } else {
-                $(this).siblings('.answer').hide(100);
-                $(this).html('show');
-            }
-
-        });
-
-    qContainer.append(showBtn);
+    
     container.append(qContainer);
 }
 
