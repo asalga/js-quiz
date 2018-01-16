@@ -1,1 +1,404 @@
+var obj = {};
+Object.assign(obj, {a:42});
+
 What is the purpose of creating a Symbol? Why not simply use a string?
+
+-----------------------------------
+Q) What are some common keyboard events to listen to?
+A) 'keydown', 'keyup'
+Q) How does the import/export keyword work?
+
+the import keyword allows us to use the functions and classes defined in another file.
+The filename must be prefixed with ./ if it is in the same directory.
+
+example:
+______
+export default class Test{}
+import a from './File.js';
+
+* note that we can rename the module in the file that imports the module.
+* We can also import the same module more than once
+export default class Test{}
+import a from './File.js';
+import b from './File.js';
+
+______
+You can only use 1 'export default' expression in a file.
+_____
+import {ModuleA, ModuleB} from './File.js';
+-----
+We can rename the imported module
+export default class ModuleC{}
+import renamedModule from './File.js';
+-----------------------------------
+Q) What is integration? (in terms of animation?)
+-----------------------------------
+
+Q) How does Promise. all work?
+
+Object.create()` is an ES5 feature that was championed by Douglas Crockford so that we could attach delegate prototypes without using constructors and the `new` keyword.
+
+Any function can create and return objects. When it’s not a constructor function, it’s called a factory function.t
+
+console logging prototype
+
+var toString = function(){
+  console.log(this, this.name, this.__proto__);
+};
+
+function PersonB(n){
+  this.name = n;
+  this.toString();  
+}
+
+PersonB.prototype = {
+  toString: toString
+};
+
+-------
+-> arrow function can't be used as ctors
+-> Why can't arrow functions be used as ctors
+-> can only be used as anonymous functions why?
+-------
+
+prototype can be assigned in ctor, using __proto__
+
+function PersonC(n){
+    this.name = n;
+    this.__proto__ = {
+      toString: toString
+    };
+    this.toString();
+}
+var pC = new PersonC('C');
+
+-------
+
+
+If setting the __proto__ in the ctor with an object
+this.__proto__ = {
+	toString
+}
+
+-------
+
+this.__proto__.toString = toString
+// this method will not overwrite the constructor property of the object.
+
+-------
+
+console logging prototype
+
+var toString = function(){
+  console.log(this, this.name, this.__proto__);
+};
+
+function PersonB(n){
+  this.name = n;
+  this.toString();  
+}
+
+PersonB.prototype = {
+  toString: toString
+};
+
+-------
+-> arrow function can't be used as ctors
+-> Why can't arrow functions be used as ctors
+-> can only be used as anonymous functions why?
+-------
+
+prototype can be assigned in ctor, using __proto__
+
+function PersonC(n){
+    this.name = n;
+    this.__proto__ = {
+      toString: toString
+    };
+    this.toString();
+}
+var pC = new PersonC('C');
+
+-------
+
+
+If setting the __proto__ in the ctor with an object
+this.__proto__ = {
+	toString
+}
+
+-------
+
+this.__proto__.toString = toString
+// this method will not overwrite the constructor property of the object.
+
+-------
+
+-> What is the constructor property for?
+----------------------
+
+var PersonD = (function(){
+  let staticPrivate = 'not set';
+
+  return function(n){
+    this.name = n;
+    console.log(this.name, ',', staticPrivate);
+
+    this.public_setPrivateStatic = function(t){
+      staticPrivate = t;
+    };
+
+    this.public_getPrivateStatic = function(){
+      return staticPrivate;
+    };
+
+  };
+})();
+---------------
+// using private members
+function PersonE(n){
+  var name = n;
+    this.getName = function(){return name};
+    this.setName = function(n){
+      name = n;
+    };
+}
+
+   {
+       "id": 7,
+       "name": "arrow function constructors",
+       "q": "Why can’t arrow functions be used at constructor functions?",
+       "a": [],
+       "tags": "arrow function",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": "6"
+   },
+
+   {
+       "id": 8,
+       "name": "arrow function in other languages",
+       "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
+       "a": [],
+       "tags": "arrow function",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 9,
+       "name": "es6 string methods",
+       "q": "CoffeeScript has similar arrow function syntax. CoffeeScript has thin arrows and fat arrows. Each bind to different things.",
+       "a": [
+       {
+           "note": "",
+           "code": [
+               "startsWith()",
+               ".endsWith()",
+               ".contains()",
+               ".repeat()"
+           ]
+       }],
+       "tags": "es6,string",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 10,
+       "name": "String.raw",
+       "q": "What is String.raw?",
+       "a": [
+       {
+           "note": "",
+           "code": []
+       }],
+       "tags": "es6,string",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 11,
+       "name": "typeof``",
+       "q": "What does typeof `` return?",
+       "a": [
+       {
+           "note": "",
+           "code": ["string"]
+       }],
+       "tags": "es6,string",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 12,
+       "name": "example of string interpolation",
+       "q": "Provide an example of string interpolation using coordinates.",
+       "a": [
+       {
+           "note": "",
+           "code": [
+               "function printCoords(x,y,z){",
+               "  console.log('['+x +', '+y+', '+z+']');",
+               "  console.log(`[${x}, ${y}, ${z}]`);",
+               "}"
+           ]
+       }],
+       "tags": "es6,string",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+  
+
+   {
+       "id": 14,
+       "name": "How much faster are TypedArrays than Arrays?",
+       "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
+       "a": [],
+       "tags": "array",
+       "complexity": "0",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 14,
+       "name": "How much faster are TypedArrays than Arrays?",
+       "q": "Arrays are closer to dictionaries. When using the [] operator, the contents are converted to a string and the value is retrieved. Typed arrays are considered ‘real’ arrays and are ~10 times faster than arrays.",
+       "a": [],
+       "tags": "array",
+       "complexity": "0",
+       "references": [
+           "https://jsperf.com/typed-arrays-vs-arrays/7",
+           "http://ryanmcdermott.me/typed-arrays/"
+       ],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 16,
+       "name": "Sort with undefined",
+       "q": "What happens when you sort an array with undefined values?",
+       "a": [
+       {
+           "note": "The undefined values will be moved to the end of the array.",
+           "code": [
+               "[,,3,2,1].sort();",
+               "> [1, 2, 3, empty × 2]"
+           ]
+       }],
+       "tags": "sort,array",
+       "complexity": "",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 17,
+       "name": "alpha sort",
+       "q": "[111,22,3].sort() results in an incorrect value. How could you fix this?",
+       "a": [
+       {
+           "note": "Sort needs to be passed a predicate.",
+           "code": [
+               "[111,22,3].sort( (n,m)=> n-m );",
+               "> [3, 22, 111]"
+           ]
+       }],
+       "tags": "sort,array",
+       "complexity": "",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 18,
+       "name": "sort algorithm",
+       "q": "What algorithm does the built-in sort method use? ",
+       "a": [
+       {
+           "note": " It really depends on browser implementation. Could either a quicksort or mergesort or whatever the vendor has implemented.",
+           "code": []
+       }],
+       "tags": "sort",
+       "complexity": "",
+       "references": [
+           "https://stackoverflow.com/questions/234683/javascript-array-sort-implementation"
+       ],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 19,
+       "name": "Arrays are slow",
+       "q": "Why are Arrays said to be slow in JS?",
+       "a": [
+       {
+           "note": "",
+           "code": []
+       }],
+       "tags": "array",
+       "complexity": "",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 20,
+       "name": "Null v.s. Undefined",
+       "q": "What is the difference between null and undefined",
+       "a": [
+       {
+           "note": "",
+           "code": []
+       }],
+       "tags": "array",
+       "complexity": "",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   },
+
+   {
+       "id": 21,
+       "name": "",
+       "q": [
+       {
+           "note": "What is the output of the following snippet?",
+           "code": [
+               "console.log(a);",
+               "var a = 10;"
+           ]
+       }],
+       "a": [
+       {
+           "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
+           "code": []
+       }],
+       "tags": "variable",
+       "complexity": "",
+       "references": [],
+       "notes": "",
+       "see-also": ""
+   }
+}
