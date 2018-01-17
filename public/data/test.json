@@ -2,6 +2,30 @@
     "questions": [
 
         {
+            "id": 29,
+            "q": "requestAnimationFrame example",
+            "name": "Write a simple example of requestAnimationFrame",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "let x = 0;",
+                    "function update(){",
+                    "    console.log('update');",
+                    "    x++;",
+                    "    requestAnimationFrame(update);",
+                    "}",
+                    "update();"
+                ]
+            }],
+            "tags": "gfx",
+            "complexity": "5",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
             "id": 28,
             "q": "What are the 9 Array methods introduced in es5?",
             "name": "es5 array methods",
