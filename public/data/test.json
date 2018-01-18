@@ -66,7 +66,7 @@
 
                     "",
                     "// Applied function against accumulator",
-                    "var arr = [1,2,3].reduce((accum, curr) => accum + curr);",
+                    "var arr = [1,2,3].reduce((accum, v, i, a) => accum + v);",
                     "▶ 6",
 
                     "",
