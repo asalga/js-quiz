@@ -17,6 +17,12 @@
     font-size: 10px;
 }
 
+.seeAlso {
+    font-family: monospace;
+    font-size: 10px;
+    color: blue;
+}
+
 .code {
     font-family: monospace;
     font-weight: 800;

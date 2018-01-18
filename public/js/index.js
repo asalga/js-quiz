@@ -14,7 +14,6 @@ function addQuestion(c, v) {
     // with the answer and code
     let qContainer = $('<div>').addClass('qContainer');
 
-
     let idContainer = $('<div>').html(v.id).addClass('questionID');
     qContainer.append(idContainer);
 
@@ -78,6 +77,22 @@ function addQuestion(c, v) {
         let str = v.tags.split(',').map(v => `#${v} `);
         let tags = $('<div>').addClass('tags').html(str);
         qContainer.append(tags);
+    }
+
+    if(v['see-also']){
+        let seeAlsoLinks = $('<div>');
+        seeAlsoLinks.addClass('seeAlso');
+        qContainer.append(seeAlsoLinks);
+
+        v['see-also'].split(',')
+        .forEach( (v) =>{
+            console.log(v);
+
+            let a = $('<a>');
+            a.attr('href', `#${v}`);
+            a.html(`${v}`);
+            seeAlsoLinks.append(a);
+        });
     }
 
     container.append(qContainer);
