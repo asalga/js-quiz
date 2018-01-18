@@ -2,6 +2,52 @@
     "questions": [
 
         {
+            "id": 33,
+            "name": "get prototype name",
+            "q": "What are two ways to determine the name of an object's prototype?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "let o = {};",
+                    "o.constructor.name",
+                    "▶ 'Object'",
+                    "Object.getPrototypeOf(o).constructor.name;",
+                    "▶ 'Object'"
+                ]
+            }],
+            "tags": "prototype",
+            "complexity": "5",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 32,
+            "name": "How to tell if object can have properties added",
+            "q": "How to tell if object can have properties added",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "var o = {};",
+                    "Object.isExtensible(o);",
+                    "▶ true",
+                    "Object.preventExtensions(o);",
+                    "Object.isExtensible(o);",
+                    "▶ false"
+
+                ]
+            }],
+            "tags": "Object,extensions",
+            "complexity": "4",
+            "references": [""],
+            "notes": "",
+            "see-also": "31"
+        },
+
+        {
             "id": 31,
             "name": "restrict/prevent properties getting added",
             "q": "How can you prevent additional properties from being added to an object?",
@@ -16,11 +62,11 @@
                     "▶ Uncaught TypeError: Cannot add property test, object is not extensible"
                 ]
             }],
-            "tags": "Object",
+            "tags": "Object,extensions",
             "complexity": "4",
             "references": [""],
             "notes": "",
-            "see-also": ""
+            "see-also": "32"
         },
 
         {
