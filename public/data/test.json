@@ -2,9 +2,60 @@
     "questions": [
 
         {
+            "id": 31,
+            "name": "restrict/prevent properties getting added",
+            "q": "How can you prevent additional properties from being added to an object?",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "'use strict'; // Just so TypeError is printed",
+                    "var o = {};",
+                    "Object.preventExtensions(o);",
+                    "o.test = 42;",
+                    "▶ Uncaught TypeError: Cannot add property test, object is not extensible"
+                ]
+            }],
+            "tags": "Object",
+            "complexity": "4",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 30,
+            "name": "singleton example",
+            "q": "Write a simple example of a singleton.",
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "var Singleton;",
+                    "",
+                    "(function(){",
+                    "    let instance;",
+                    "    Singleton = function Singleton(){",
+                    "        if(instance) return instance;",
+                    "        instance = this;",
+                    "        instance.prop = 42;",
+                    "    };",
+                    "})();",
+                    "",
+                    "new Singleton() === new Singleton();"
+                ]
+            }],
+            "tags": "singleton,pattern",
+            "complexity": "6",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
             "id": 29,
-            "q": "requestAnimationFrame example",
-            "name": "Write a simple example of requestAnimationFrame",
+            "name": "requestAnimationFrame example",
+            "q": "Write a simple example of requestAnimationFrame.",
             "a": [
             {
                 "note": "",
