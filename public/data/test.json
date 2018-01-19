@@ -2,12 +2,34 @@
     "questions": [
 
         {
+            "id": 38,
+            "name": "prototype of empty object",
+            "q":
+            {
+                "note": "What is the prototype of an empty object?",
+                "code": [
+                    "({}).prototype"
+                ]
+            },
+            "a": [
+            {
+                "note": [""]
+            }],
+            "tags": "prototype",
+            "complexity": "",
+            "references": [""],
+            "notes": "",
+            "see-also": "",
+            "status": "published"
+        },
+
+        {
             "id": 37,
             "q": "What's the difference between ECMAScript and JavaScript?",
             "name": "ECMAScript and JavaScript?",
             "a": [
             {
-                "note": ["TBC"]
+                "note": [""]
             }],
             "tags": "",
             "complexity": "",
@@ -62,7 +84,8 @@
         {
             "id": 34,
             "name": "",
-            "q": {
+            "q":
+            {
                 "note": "If a function returns a primitive and you use it as a constructor function what will be returned?",
                 "code": "var a = 42;"
             },

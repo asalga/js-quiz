@@ -2,6 +2,10 @@
     Andor Saga
 */
 
+body {
+    margin: 10px;
+}
+
 code {
     display: inline-block;
     font-size: 1.25em;
@@ -9,7 +13,7 @@ code {
 }
 
 #questions {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .questionID {
@@ -35,7 +39,7 @@ code {
 }
 
 .qContainer {
-    background-color: #ddd;
+    background-color: #DDD;
     margin-bottom: 30px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -43,7 +47,7 @@ code {
 }
 
 .question {
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .show {
