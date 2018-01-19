@@ -46,7 +46,6 @@ function addQuestion(c, v) {
         // A question may have a number of answers
         v.a.forEach((answer, i) => {
 
-            // 
             let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
 
             let ansContainer = $('<div>')
@@ -62,14 +61,13 @@ function addQuestion(c, v) {
                     .addClass('answerCode')
                     .html(answer.code.join('\n'));
 
-                ansContainer.append(textarea);
-                ansContainer.append($('<br/>'));
+                ansContainer.append(textarea, $('<br/>'));
 
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
-
-                // Only after CodeMirror has finished its work, we can hide the code.
-                ansContainer.css({ 'display': 'none' });
             }
+
+            // Only after CodeMirror has finished its work, we can hide the code.     
+            ansContainer.css({ 'display': 'none' });
         });
     }
 
@@ -79,20 +77,18 @@ function addQuestion(c, v) {
         qContainer.append(tags);
     }
 
-    if(v['see-also']){
+    if (v['see-also']) {
         let seeAlsoLinks = $('<div>');
         seeAlsoLinks.addClass('seeAlso');
         qContainer.append(seeAlsoLinks);
 
         v['see-also'].split(',')
-        .forEach( (v) =>{
-            console.log(v);
-
-            let a = $('<a>');
-            a.attr('href', `#${v}`);
-            a.html(`${v}`);
-            seeAlsoLinks.append(a);
-        });
+            .forEach((v) => {
+                let a = $('<a>')
+                    .attr('href', `#${v}`)
+                    .html(`${v}`);
+                seeAlsoLinks.append(a);
+            });
     }
 
     container.append(qContainer);

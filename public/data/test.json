@@ -1,5 +1,41 @@
 {
     "questions": [
+        {
+            "id": 35,
+            "q": "How can you undo the effects of <code>preventExtensions()</code>?",
+            "name": "",
+            "a": [
+            {
+                "note": "There no direct way to undo the effects of Object.preventExtensions."
+            }],
+            "tags": "extentions",
+            "complexity": "5",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 34,
+            "name": "",
+            "q": "If a function returns a primitive and you use it as a constructor function what will be returned?",
+            "a": [
+            {
+                "note": "Unless an object is returned, <i>this</i> gets returned.",
+                "code": [
+                    "function Test(){",
+                    "  return 42;",
+                    "}",
+                    "console.log(new Test());",
+                    "▶ Test {}"
+                ]
+            }],
+            "tags": "function",
+            "complexity": "5",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
 
         {
             "id": 33,
@@ -101,7 +137,7 @@
         {
             "id": 29,
             "name": "requestAnimationFrame example",
-            "q": "Write a simple example of requestAnimationFrame.",
+            "q": "Write a simple example of <code>requestAnimationFrame</code>.",
             "a": [
             {
                 "note": "",
