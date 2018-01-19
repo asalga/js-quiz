@@ -1,9 +1,37 @@
 {
     "questions": [
+
+
+
+        {
+            "id": 36,
+            "q": "What is the difference between Object.preventExtensions and Object.seal?",
+            "name": "preventExtensions vs. seal",
+            "a": [
+            {
+                "note": [
+                    "After using seal on an object, we can no longer ",
+                    " delete any of it's own properties."
+                ],
+                "code": [
+                    "'use strict';",
+                    "var o = {p:42};",
+                    "Object.seal(o);",
+                    "delete o.p;",
+                    "▶ Uncaught TypeError: Cannot delete property 'p' of #<Object>"
+                ]
+            }],
+            "tags": "preventExtensions,seal",
+            "complexity": "3",
+            "references": [""],
+            "notes": "",
+            "see-also": ""
+        },
+
         {
             "id": 35,
             "q": "How can you undo the effects of <code>preventExtensions()</code>?",
-            "name": "",
+            "name": "undo preventExtensions",
             "a": [
             {
                 "note": "There no direct way to undo the effects of Object.preventExtensions."
@@ -76,7 +104,7 @@
 
                 ]
             }],
-            "tags": "Object,extensions",
+            "tags": "object,extensions",
             "complexity": "4",
             "references": [""],
             "notes": "",
