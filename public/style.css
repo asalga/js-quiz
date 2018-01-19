@@ -47,8 +47,11 @@ code {
 }
 
 .show {
-    color: blue;
     cursor: pointer;
+}
+
+.show:hover {
+    color: #336699 !important;
 }
 
 .CodeMirror,

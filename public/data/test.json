@@ -14,7 +14,7 @@
             "references": ["https://stackoverflow.com/questions/912479/what-is-the-difference-between-javascript-and-ecmascript"],
             "notes": "",
             "see-also": "",
-            "status": "published"
+            "status": "draft"
         },
 
         {
@@ -62,7 +62,10 @@
         {
             "id": 34,
             "name": "",
-            "q": "If a function returns a primitive and you use it as a constructor function what will be returned?",
+            "q": {
+                "note": "If a function returns a primitive and you use it as a constructor function what will be returned?",
+                "code": "var a = 42;"
+            },
             "a": [
             {
                 "note": "Unless an object is returned, <i>this</i> gets returned.",

@@ -10,27 +10,28 @@
 function addQuestion(c, v) {
     let container = $(c);
 
-    // Question container that holds the the question along
-    // with the answer and code
-    let qContainer = $('<div>').addClass('qContainer');
+    // Not all questions are complete
+    if (v.status === 'draft') { return; }
 
-    let idContainer = $('<div>').html(v.id).addClass('questionID');
+    // Question container that holds question along with answer and code
+    let qContainer = $(`<div id=${v.id} class=qContainer>`);
+
+    let idContainer = $(`<div class=questionID>${v.id}</a>`);
     qContainer.append(idContainer);
 
     container.append(qContainer);
-    qContainer.attr('id', v.id);
 
     // question
-    let q = $('<div>').addClass('question').html(v.q);
+    let q = $(`<div class=question>${v.q}</a>`)
     qContainer.append(q);
 
-    let showBtn = $('<a>')
-        .addClass('show')
-        .html('[show]')
+    let showStr = '[show]';
+    let showBtn = $(`<a class=show>${showStr}</a>`)
         .click(function() {
             let text = $(this).html();
 
-            if (text === '[show]') {
+            // TODO: document!
+            if (text === showStr) {
                 $(this).siblings('.answer').show(100);
                 $(this).html('[hide]');
             } else {
@@ -48,20 +49,16 @@ function addQuestion(c, v) {
 
             let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
 
-            let ansContainer = $('<div>')
-                .addClass('answer')
-                .html(note);
-
+            let ansContainer = $(`<div class=answer>${note}</div>`);
             qContainer.append(ansContainer);
 
             // Not all answer have code examples, so we only want to
             // add a textarea if needed.
             if (answer.code) {
-                let textarea = $('<textarea>')
-                    .addClass('answerCode')
+                let textarea = $('<textarea class=answerCode>')
                     .html(answer.code.join('\n'));
 
-                ansContainer.append(textarea, $('<br/>'));
+                ansContainer.append(textarea, '<br/>');
 
                 CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
             }
@@ -78,15 +75,12 @@ function addQuestion(c, v) {
     }
 
     if (v['see-also']) {
-        let seeAlsoLinks = $('<div>');
-        seeAlsoLinks.addClass('seeAlso');
+        let seeAlsoLinks = $('<div class=seeAlso>');
         qContainer.append(seeAlsoLinks);
 
         v['see-also'].split(',')
             .forEach((v) => {
-                let a = $('<a>')
-                    .attr('href', `#${v}`)
-                    .html(`${v}`);
+                let a = $(`<a href=#${v}>${v}</a>`);
                 seeAlsoLinks.append(a);
             });
     }
