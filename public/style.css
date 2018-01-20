@@ -52,6 +52,7 @@ code {
 
 .show {
     cursor: pointer;
+    font-family: monospace !important;
 }
 
 .show:hover {

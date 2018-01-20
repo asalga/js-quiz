@@ -1,19 +1,30 @@
 {
     "questions": [
-
         {
             "id": 38,
             "name": "prototype of empty object",
-            "q":
-            {
-                "note": "What is the prototype of an empty object?",
-                "code": [
-                    "({}).prototype"
-                ]
-            },
+            "q": [
+                {
+                    "note": "What is the prototype of an empty object?",
+                    "code": [
+                        "({}).prototype"
+                    ]
+                },
+                {
+                    "note": "and what is...",
+                    "code": [
+                        "({}).prototype"
+                    ]
+                }
+            ],
             "a": [
             {
-                "note": [""]
+
+                "note": "anser....",
+                "code": [
+                    "let i = 2340;"
+                ]
+
             }],
             "tags": "prototype",
             "complexity": "",
@@ -22,11 +33,13 @@
             "see-also": "",
             "status": "published"
         },
-
         {
             "id": 37,
-            "q": "What's the difference between ECMAScript and JavaScript?",
             "name": "ECMAScript and JavaScript?",
+            "q": [
+            {
+                "note": "What's the difference between ECMAScript and JavaScript?"
+            }],
             "a": [
             {
                 "note": [""]
@@ -41,8 +54,11 @@
 
         {
             "id": 36,
-            "q": "What is the difference between Object.preventExtensions and Object.seal?",
             "name": "preventExtensions vs. seal",
+            "q": [
+            {
+                "note": "What is the difference between Object.preventExtensions and Object.seal?"
+            }],
             "a": [
             {
                 "note": [
@@ -67,7 +83,11 @@
 
         {
             "id": 35,
-            "q": "How can you undo the effects of <code>preventExtensions()</code>?",
+            "q": [
+            {
+                "note": "How can you undo the effects of <code>preventExtensions()</code>?"
+            }],
+
             "name": "undo preventExtensions",
             "a": [
             {
@@ -84,11 +104,11 @@
         {
             "id": 34,
             "name": "",
-            "q":
+            "q": [
             {
                 "note": "If a function returns a primitive and you use it as a constructor function what will be returned?",
-                "code": "var a = 42;"
-            },
+                "code": ["var a = 42;"]
+            }],
             "a": [
             {
                 "note": "Unless an object is returned, <i>this</i> gets returned.",
@@ -111,7 +131,11 @@
         {
             "id": 33,
             "name": "get prototype name",
-            "q": "What are two ways to determine the name of an object's prototype?",
+            "q": [
+            {
+                "note": "What are two ways to determine the name of an object's prototype?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -134,7 +158,11 @@
         {
             "id": 32,
             "name": "How to tell if object can have properties added",
-            "q": "How to tell if object can have properties added",
+            "q": [
+            {
+                "note": "How to tell if object can have properties added?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -159,7 +187,11 @@
         {
             "id": 31,
             "name": "restrict/prevent properties getting added",
-            "q": "How can you prevent additional properties from being added to an object?",
+            "q": [
+            {
+                "note": "How can you prevent additional properties from being added to an object?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -182,7 +214,11 @@
         {
             "id": 30,
             "name": "singleton example",
-            "q": "Write a simple example of a singleton.",
+            "q": [
+            {
+                "note": "Write a simple example of a singleton."
+            }],
+
             "a": [
             {
                 "note": "",
@@ -212,7 +248,11 @@
         {
             "id": 29,
             "name": "requestAnimationFrame example",
-            "q": "Write a simple example of <code>requestAnimationFrame</code>.",
+            "q": [
+            {
+                "note": "Write a simple example of <code>requestAnimationFrame</code>."
+            }],
+
             "a": [
             {
                 "note": "",
@@ -236,7 +276,11 @@
 
         {
             "id": 28,
-            "q": "What are the 9 Array methods introduced in es5?",
+            "q": [
+            {
+                "note": "What are the 9 Array methods introduced in es5?"
+            }],
+
             "name": "es5 array methods",
             "a": [
             {
@@ -300,10 +344,13 @@
             "status": "published"
         },
 
-
         {
             "id": 27,
-            "q": "List 3 ways to convert a String to Number",
+            "q": [
+            {
+                "note": "List 3 ways to convert a String to Number"
+            }],
+
             "name": "convert String to Number",
             "a": [
             {
@@ -332,7 +379,11 @@
         {
             "id": 1,
             "name": "No return statement",
-            "q": "If a return statment is not present in a function body, what does it return if called?",
+            "q": [
+            {
+                "note": "If a return statment is not present in a function body, what does it return if called?"
+            }],
+
             "a": [
             {
                 "note": "If you omit the return statement, <span class='code'>undefined</span> is returned implicitly.",
@@ -351,7 +402,11 @@
         {
             "id": 2,
             "name": "way to create a function",
-            "q": "Provide different ways of creating a function.",
+            "q": [
+            {
+                "note": "Provide different ways of creating a function."
+            }],
+
             "a": [
             {
                 "note": "In JavaScript, you can create functions in several ways.",
@@ -379,7 +434,11 @@
         {
             "id": 3,
             "name": "function expression vs. function declaration",
-            "q": "What is the difference between function expressions and function declarations?",
+            "q": [
+            {
+                "note": "What is the difference between function expressions and function declarations?"
+            }],
+
             "a": [
             {
                 "note": "The syntactical difference between function expressions and declarations are subtle. A function expression assigns a function to a variable.",
@@ -405,7 +464,8 @@
             {
                 "note": "Function declarations have names and are <i>hoisted</i>. Function expressions can exist anywhere where a valid expression can exist.",
                 "code": [
-                    "// We can call the function before the declaration because it gets hoisted.",
+                    "// We can call the function before the declaration because ",
+                    "// it gets hoisted.",
                     "funcDecl();",
                     "function funcDecl(){",
                     "  return 42;",
@@ -431,7 +491,11 @@
         {
             "id": 4,
             "name": "arrow function benefits",
-            "q": "What are the benefits of arrow functions?",
+            "q": [
+            {
+                "note": "What are the benefits of arrow functions?"
+            }],
+
             "a": [
             {
                 "note": "Firstly, arrow functions are less verbose than function expressions.",
@@ -468,7 +532,11 @@
         {
             "id": 5,
             "name": "when to avoid arrow functions",
-            "q": "When should arrow functions be avoided?",
+            "q": [
+            {
+                "note": "When should arrow functions be avoided?"
+            }],
+
             "a": [
             {
                 "note": "Arrow functions are perfect for short functions, one-liners. The longer the function, the less arrow functions help."
@@ -484,7 +552,11 @@
         {
             "id": 6,
             "name": "invalid places for arrow functions",
-            "q": "In what situations can you <b>not</b> use arrow functions?",
+            "q": [
+            {
+                "note": "In what situations can you <b>not</b> use arrow functions?"
+            }],
+
             "a": [
             {
                 "note": "You cannot use arrow functions as constructor functions.",
@@ -506,7 +578,11 @@
         {
             "id": 13,
             "name": "Way to create empty array",
-            "q": "List 5 ways to instantiate an empty array",
+            "q": [
+            {
+                "note": "List 5 ways to instantiate an empty array"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -529,7 +605,11 @@
         {
             "id": 20,
             "name": "",
-            "q": "Is it possible to create an object without a prototype?",
+            "q": [
+            {
+                "note": "Is it possible to create an object without a prototype?"
+            }],
+
             "a": [
             {
                 "note": "Yes. Using the Object object, you can call create() and pass in null",
@@ -552,7 +632,11 @@
         {
             "id": 21,
             "name": "",
-            "q": "If calling a constructor function, are parentheses still required?",
+            "q": [
+            {
+                "note": "If calling a constructor function, are parentheses still required?"
+            }],
+
             "a": [
             {
                 "note": "No. You may omit the parentheses if no arguments are passed into a constructor function. <span class='code'>this.arguments</span> will resolve to <span class='code'>undefined</span>.",
@@ -576,7 +660,11 @@
         {
             "id": 22,
             "name": "",
-            "q": "What are the built-in Javascript constructors?",
+            "q": [
+            {
+                "note": "What are the built-in Javascript constructors?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -605,7 +693,11 @@
         {
             "id": 23,
             "name": "ways to create empty object",
-            "q": "List 7 ways to create an empty object.",
+            "q": [
+            {
+                "note": "List 7 ways to create an empty object."
+            }],
+
             "a": [
             {
                 "note": "There are several syntactic ways to create an empty object in JS",
@@ -630,7 +722,11 @@
         {
             "id": 24,
             "name": "",
-            "q": "What’s the best way to check for an undefined value?",
+            "q": [
+            {
+                "note": "What’s the best way to check for an undefined value?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -649,7 +745,11 @@
         {
             "id": 25,
             "name": "",
-            "q": "Why was arguments.callee removed from ES5 strict mode?",
+            "q": [
+            {
+                "note": "Why was arguments.callee removed from ES5 strict mode?"
+            }],
+
             "a": [
             {
                 "note": "",
@@ -670,7 +770,11 @@
         {
             "id": 26,
             "name": "",
-            "q": "What is a Promise?",
+            "q": [
+            {
+                "note": "What is a Promise?"
+            }],
+
             "a": [
             {
                 "note": "",

@@ -16,14 +16,19 @@ function addQuestion(c, v) {
     // Question container that holds question along with answer and code
     let qContainer = $(`<div id=${v.id} class=qContainer>`);
 
-    let idContainer = $(`<div class=questionID>${v.id}</a>`);
-    qContainer.append(idContainer);
-
+    let id = $(`<div class=questionID>${v.id}</div>`);
+    qContainer.append(id);
     container.append(qContainer);
 
-    // question
-    let q = $(`<div class=question>${v.q}</a>`)
-    qContainer.append(q);
+    // for each question
+    v.q.forEach(q => {
+        let qNote = $(`<div class=question>${q.note}</div>`);
+        qContainer.append(qNote);
+        if (q.code) {
+            mirrorify(qContainer, q.code);
+        }
+    });
+
 
     let showStr = '[show]';
     let showBtn = $(`<a class=show>${showStr}</a>`)
@@ -36,41 +41,34 @@ function addQuestion(c, v) {
                 $(this).html('[hide]');
             } else {
                 $(this).siblings('.answer').hide(100);
-                $(this).html('[show]');
+                $(this).html(showStr);
             }
         });
 
     qContainer.append(showBtn);
 
-    //
-    if (v.a) {
-        // A question may have a number of answers
-        v.a.forEach((answer, i) => {
+    // A question may have a number of answers
+    v.a.forEach((answer, i) => {
 
-            let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
+        let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
 
-            let ansContainer = $(`<div class=answer>${note}</div>`);
-            qContainer.append(ansContainer);
+        let ansContainer = $(`<div class=answer>${note}</div>`);
+        qContainer.append(ansContainer);
 
-            // Not all answer have code examples, so we only want to
-            // add a textarea if needed.
-            if (answer.code) {
-                let textarea = $('<textarea class=answerCode>')
-                    .html(answer.code.join('\n'));
+        // Not all answer have code examples, so we only want to
+        // add a textarea if needed.
+        if (answer.code) {
+            mirrorify(ansContainer, answer.code);
+        }
 
-                ansContainer.append(textarea, '<br/>');
+        // Only after CodeMirror has finished its work, we can hide the code.     
+        ansContainer.css({ 'display': 'none' });
+    });
 
-                CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
-            }
-
-            // Only after CodeMirror has finished its work, we can hide the code.     
-            ansContainer.css({ 'display': 'none' });
-        });
-    }
-
+    // Tags will help us filter question later on
     if (v.tags) {
-        let str = v.tags.split(',').map(v => `#${v} `);
-        let tags = $('<div>').addClass('tags').html(str);
+        let allTags = v.tags.split(',').map(v => `#${v} `).join('');
+        let tags = $(`<div class=tags>${allTags}</div>`);
         qContainer.append(tags);
     }
 
@@ -79,17 +77,21 @@ function addQuestion(c, v) {
         qContainer.append(seeAlsoLinks);
 
         v['see-also'].split(',')
-            .forEach((v) => {
-                let a = $(`<a href=#${v}>${v}</a>`);
-                seeAlsoLinks.append(a);
-            });
+            .forEach(v => seeAlsoLinks.append($(`<a href=#${v}>${v}</a>`)));
     }
 
     container.append(qContainer);
 }
 
+
+function mirrorify(container, code) {
+    let textarea = $('<textarea class=answerCode>').html(code.join('\n'));
+    container.append(textarea, '<br/>');
+    CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
+}
+
 function populateDOM(json) {
-    var questionsDiv = document.getElementById('questions');
+    var questionsDiv = $('#questions');
 
     json.questions.forEach((v, i, arr) => {
         addQuestion(questionsDiv, v);
