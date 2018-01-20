@@ -83,18 +83,20 @@ function addQuestion(c, v) {
     container.append(qContainer);
 }
 
-
+/*
+    Convert snippets of code into a syntax-highlighted textarea
+*/
 function mirrorify(container, code) {
     let textarea = $('<textarea class=answerCode>').html(code.join('\n'));
     container.append(textarea, '<br/>');
     CodeMirror.fromTextArea(textarea[0], { lineNumbers: true, readOnly: true });
 }
 
+/*
+*/
 function populateDOM(json) {
-    var questionsDiv = $('#questions');
-
     json.questions.forEach((v, i, arr) => {
-        addQuestion(questionsDiv, v);
+        addQuestion($('#questions'), v);
     });
 }
 
