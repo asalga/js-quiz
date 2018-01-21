@@ -1,6 +1,28 @@
 {
     "questions": [
         {
+            "id": 42,
+            "name": "performance.now()",
+            "q": [
+            {
+                "note": "What is performance.now?"
+            }],
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "timing",
+            "complexity": 3,
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "draft"
+        },
+
+        {
             "id": 41,
             "name": "Promise example",
             "q": [
@@ -506,7 +528,9 @@
             "complexity": "1",
             "references": [],
             "grade": "10",
-            "notes": ""
+            "notes": "",
+            "see-also": "",
+            "status": "published"
         },
 
         {
@@ -538,7 +562,9 @@
             "complexity": "4",
             "references": [],
             "grade": 7,
-            "notes": ""
+            "notes": "",
+            "see-also": "",
+            "status": "published"
         },
 
         {
