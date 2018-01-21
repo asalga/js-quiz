@@ -1,6 +1,28 @@
 {
     "questions": [
 
+    {
+            "id": 42,
+            "name": "performance.now()",
+            "q": [
+            {
+                "note": "What is performance.now?"
+            }],
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "timing",
+            "complexity": 3,
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "draft"
+        },
+
         {
             "id": 41,
             "name": "Promise example",
