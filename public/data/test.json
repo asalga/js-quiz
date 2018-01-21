@@ -1,6 +1,5 @@
 {
     "questions": [
-
     {
             "id": 42,
             "name": "performance.now()",
@@ -52,7 +51,6 @@
             "see-also": "",
             "status": "published"
         },
-
 
         {
             "id": 40,
@@ -128,8 +126,6 @@
             "status": "published"
         },
 
-
-
         {
             "id": 38,
             "name": "prototype of empty object",
@@ -154,7 +150,6 @@
                     "({}).prototype",
                     "▶ undefined"
                 ]
-
             },
             {
                 "note": "function prototypes",
@@ -241,20 +236,22 @@
 
         {
             "id": 34,
-            "name": "",
+            "name": "Return primitive in constructor function",
             "q": [
             {
-                "note": "If a function returns a primitive and you use it as a constructor function what will be returned?",
-                "code": ["var a = 42;"]
-            }],
-            "a": [
-            {
-                "note": "Unless an object is returned, <i>this</i> gets returned.",
+                "note": "What will the following snippet do?",
                 "code": [
                     "function Test(){",
                     "  return 42;",
                     "}",
-                    "console.log(new Test());",
+                    "console.log(new Test());"
+                ]
+            }],
+            "a": [
+            {
+                "note": "Unless an object is returned explicitly, <i>this</i> gets returned and your return is ignored.",
+                "code": [
+                    "// result:",
                     "▶ Test {}"
                 ]
             }],
