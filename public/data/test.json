@@ -34,11 +34,18 @@
                 "code": [
                     "[] == 0",
                     "{} == {}",
+                    "[] == false",
+                    "''*'' === 0",
+                    "''**'' === 0",
                     "`` == ``",
                     "0 == 'false'",
+                    "NaN == NaN",
                     "'str' === 'str'",
                     "0/0 == Infinity",
-                    "0.1 + 0.2 === 0.3"
+                    "0 <= null",
+                    "String('x') === new String('x')",
+                    "0.1 + 0.2 === 0.3",
+                    "!!'false' === !!'true'"
                 ]
             }],
             "a": [
@@ -47,14 +54,20 @@
                 "code": [
                     "[] == 0           // true",
                     "{} == {}          // false",
+                    "[] == false       // true",
+                    "''*'' === 0       // true",
+                    "''**'' === 0      // false",
                     "`` == ``          // true",
                     "0 == 'false'      // false",
-                    "0/0 == Infinity   // false 0/0 is NaN"
+                    "NaN == NaN        // false",
+                    "0/0 == Infinity   // false 0/0 is NaN",
+                    "0 <= null         // true",
+                    "String('x') === new String('x')  // false",
                     "0.1 + 0.2 === 0.3 // false"
                 ]
             }],
             "tags": "variable",
-            "complexity": "",
+            "complexity": "8",
             "references": [],
             "notes": "",
             "see-also": "",
