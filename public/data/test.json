@@ -368,18 +368,15 @@
             {
                 "note": "Write a simple example of <code>requestAnimationFrame</code>."
             }],
-
             "a": [
             {
                 "note": "",
                 "code": [
-                    "let x = 0;",
-                    "function update(){",
-                    "    console.log('update');",
-                    "    x++;",
+                    "function update(totalTime){",
+                    "    console.log(totalTime/1000);",
                     "    requestAnimationFrame(update);",
                     "}",
-                    "update();"
+                    "update(0);"
                 ]
             }],
             "tags": "gfx",
