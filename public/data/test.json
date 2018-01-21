@@ -1,5 +1,37 @@
 {
     "questions": [
+
+        {
+            "id": 41,
+            "name": "Promise example",
+            "q": [
+            {
+                "note": "Write a simple example of a Promise"
+            }],
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    "new Promise( (res, rej) => {",
+                    "  let img = new Image;",
+                    "  img.onload = () => res(img);  ",
+                    "  img.src = 'http://i.imgur.com/s7n5kUYb.jpg'",
+                    "})",
+                    ".then(img => {",
+                    "  console.log(img);",
+                    "});",
+                    "▶ <img src ='http://i.imgur.com/s7n5kUYb.jpg'>"
+                ]
+            }],
+            "tags": "promise",
+            "complexity": 4,
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "published"
+        },
+
+
         {
             "id": 40,
             "name": "compare empty object and empty array",
@@ -224,15 +256,15 @@
             {
                 "note": "",
                 "code": [
-                    "let o = {};",
-                    "o.constructor.name",
+                    "({}).constructor.name",
                     "▶ 'Object'",
-                    "Object.getPrototypeOf(o).constructor.name;",
+                    "Object.getPrototypeOf({}).constructor.name",
                     "▶ 'Object'"
                 ]
             }],
             "tags": "prototype",
-            "complexity": "5",
+            "complexity": 5,
+            "grade": 5,
             "references": [""],
             "notes": "",
             "see-also": "",
@@ -833,7 +865,6 @@
             {
                 "note": "Why was arguments.callee removed from ES5 strict mode?"
             }],
-
             "a": [
             {
                 "note": "",
@@ -848,7 +879,7 @@
             ],
             "notes": "",
             "see-also": "",
-            "status": "published"
+            "status": "draft"
         },
 
         {
