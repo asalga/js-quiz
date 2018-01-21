@@ -1,37 +1,108 @@
 {
     "questions": [
         {
+            "id": 40,
+            "name": "compare empty object and empty array",
+            "q": [
+            {
+                "note": "What does the following line do?",
+                "code": [
+                    "{} == []"
+                ]
+            }],
+            "a": [
+            {
+                "note": "It will return a syntax error because ...",
+                "code": [
+                    "Uncaught SyntaxError: Unexpected token =="
+                ]
+            }],
+            "tags": "variable",
+            "complexity": "8",
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "draft"
+        },
+
+        {
+            "id": 39,
+            "name": "comparing primitives",
+            "q": [
+            {
+                "note": "Which of the following evaluates to true?",
+                "code": [
+                    "[] == 0",
+                    "{} == {}",
+                    "`` == ``",
+                    "0 == 'false'",
+                    "'str' === 'str'",
+                    "0/0 == Infinity",
+                    "0.1 + 0.2 === 0.3"
+                ]
+            }],
+            "a": [
+            {
+                "note": "Results:",
+                "code": [
+                    "[] == 0           // true",
+                    "{} == {}          // false",
+                    "`` == ``          // true",
+                    "0 == 'false'      // false",
+                    "0/0 == Infinity   // false 0/0 is NaN"
+                    "0.1 + 0.2 === 0.3 // false"
+                ]
+            }],
+            "tags": "variable",
+            "complexity": "",
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "published"
+        },
+
+
+
+        {
             "id": 38,
             "name": "prototype of empty object",
             "q": [
-                {
-                    "note": "What is the prototype of an empty object?",
-                    "code": [
-                        "({}).prototype"
-                    ]
-                },
-                {
-                    "note": "and what is...",
-                    "code": [
-                        "({}).prototype"
-                    ]
-                }
-            ],
+            {
+                "note": "What is the prototype of an empty object?",
+                "code": [
+                    "({}).prototype"
+                ]
+            },
+            {
+                "note": "And what is the prototype of an empty function?",
+                "code": [
+                    "(function(){}).prototype"
+                ]
+            }],
             "a": [
             {
-
-                "note": "anser....",
+                "note": "object prototypes",
                 "code": [
-                    "let i = 2340;"
+
+                    "({}).prototype",
+                    "▶ undefined"
                 ]
 
+            },
+            {
+                "note": "function prototypes",
+                "code": [
+
+                    "({}).prototype",
+                    "▶ {constructor: ƒ}"
+                ]
             }],
             "tags": "prototype",
             "complexity": "",
             "references": [""],
             "notes": "",
             "see-also": "",
-            "status": "published"
+            "status": "draft"
         },
         {
             "id": 37,
@@ -789,7 +860,9 @@
             ],
             "notes": "",
             "see-also": "",
-            "status": "published"
+            "status": "draft"
         }
+
+
     ]
 }
