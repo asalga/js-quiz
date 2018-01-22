@@ -18,7 +18,7 @@
             {
                 "code": [
                     "function printCoords(x,y,z){",
-                    "  console.log('['+x +', '+y+', '+z+']');",
+                    "  console.log('[' + x + ', ' + y + ', ' + z + ']');",
                     "  console.log(`[${x}, ${y}, ${z}]`);",
                     "}"
                 ]
