@@ -100,6 +100,6 @@ function populateDOM(json) {
     });
 }
 
-var json = fetch('public/data/test.json')
+var json = fetch('public/data/questions.json')
     .then(resp => resp.json())
     .then(data => populateDOM(data));
