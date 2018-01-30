@@ -1,6 +1,24 @@
 {
     "questions": [
          {
+            "id": 47,
+            "name": "WeakMaps, Maps, WeakSets, Sets iterable?",
+            "q": [
+            {
+                "note": "Of the following, which are iterable? Maps, WeakMaps, Sets, WeakMaps"
+            }],
+            "a": [
+            {
+                "note": "Maps and Sets are iterable, but WeakMaps and WeakSets are not iterable."
+            }],
+            "tags": "",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+         {
             "id": 46,
             "name": "Example of a custom es6 Iterator",
             "q": [
