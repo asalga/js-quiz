@@ -1,15 +1,36 @@
 {
     "questions": [
-
+        {
+            "id": 45,
+            "name": "Example of a simple es6 Iterator",
+            "q": [
+            {
+                "note": "Provide an example of a es6 array iterator"
+            }],
+            "a": [
+            {
+                "code": [
+                    "var arr = [1, 2, 3];",
+                    "var it = arr[Symbol.iterator]();",
+                    "it.next();",
+                    "▶ {value: 1, done: false}"
+                ]
+            }],
+            "tags": "es6,iterator",
+            "complexity": "4",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
 
         {
             "id": 44,
-            "name": "Example of string interpolation using a 2d vector",
+            "name": "Example of string interpolation using a 3D vector",
             "q": [
             {
                 "note": "Provide an example of string interpolation using coordinates.",
                 "code": [
-                    "function printCoords(x,y,z){",
+                    "function printCoords(x, y, z){",
                     " // ...",
                     "}"
                 ]
@@ -17,13 +38,13 @@
             "a": [
             {
                 "code": [
-                    "function printCoords(x,y,z){",
+                    "function printCoords(x, y, z){",
                     "  console.log('[' + x + ', ' + y + ', ' + z + ']');",
                     "  console.log(`[${x}, ${y}, ${z}]`);",
                     "}"
                 ]
             }],
-            "tags": "es6,string",
+            "tags": "es6,string,string interpolation",
             "complexity": "2",
             "references": [],
             "notes": "",
