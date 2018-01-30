@@ -1,6 +1,41 @@
 {
     "questions": [
-         {
+        {
+            "id": 48,
+            "name": "",
+            "q": [
+            {
+                "note": "Create an iterable that returns only zeros."
+            }],
+            "a": [
+                {
+                    "code": [
+                        "let zerosForever = {",
+                        "  [Symbol.iterator]: function(){ return this; },",
+                        "  next: function(){ return {done: false; value: 0} }",
+                        "};"
+                    ]
+                },
+
+                {
+                    "note": "A bit more succinctly...",
+                    "code": [
+                        "var zerosForever = {",
+                        "  [Symbol.iterator](){ return this; },",
+                        "  next(){return {value: 0, done: false} }",
+                        "};"
+                    ]
+                }
+
+            ],
+            "tags": "",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
             "id": 47,
             "name": "WeakMaps, Maps, WeakSets, Sets iterable?",
             "q": [
@@ -18,7 +53,7 @@
             "see-also": ""
         },
 
-         {
+        {
             "id": 46,
             "name": "Example of a custom es6 Iterator",
             "q": [
