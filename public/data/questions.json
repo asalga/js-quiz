@@ -1,5 +1,32 @@
 {
     "questions": [
+         {
+            "id": 46,
+            "name": "Example of a custom es6 Iterator",
+            "q": [
+            {
+                "note": "Provide an example of a custom es6 iterator"
+            }],
+            "a": [
+            {
+                "code": [
+                    "var it = {",
+                    "  i: 0,",
+                    "  [Symbol.iterator](){ return this; },",
+                    "  next(){",
+                    "    return {done: false, value: this.i++}",
+                    "  }",
+                    "};"
+                ]
+            }],
+            "tags": "es6,iterator",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+
         {
             "id": 45,
             "name": "Example of a simple es6 Iterator",
