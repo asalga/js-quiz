@@ -34,7 +34,7 @@ import renamedModule from './File.js';
 Q) What is integration? (in terms of animation?)
 -----------------------------------
 
-Q) How does Promise. all work?
+Q) How does Promise.all work?
 
 Object.create()` is an ES5 feature that was championed by Douglas Crockford so that we could attach delegate prototypes without using constructors and the `new` keyword.
 
@@ -241,27 +241,6 @@ function PersonE(n){
        "see-also": ""
    },
 
-   {
-       "id": 12,
-       "name": "example of string interpolation",
-       "q": "Provide an example of string interpolation using coordinates.",
-       "a": [
-       {
-           "note": "",
-           "code": [
-               "function printCoords(x,y,z){",
-               "  console.log('['+x +', '+y+', '+z+']');",
-               "  console.log(`[${x}, ${y}, ${z}]`);",
-               "}"
-           ]
-       }],
-       "tags": "es6,string",
-       "complexity": "0",
-       "references": [],
-       "notes": "",
-       "see-also": ""
-   },
-
   
 
    {
@@ -379,26 +358,5 @@ function PersonE(n){
        "see-also": ""
    },
 
-   {
-       "id": 21,
-       "name": "",
-       "q": [
-       {
-           "note": "What is the output of the following snippet?",
-           "code": [
-               "console.log(a);",
-               "var a = 10;"
-           ]
-       }],
-       "a": [
-       {
-           "note": "undefined. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error.",
-           "code": []
-       }],
-       "tags": "variable",
-       "complexity": "",
-       "references": [],
-       "notes": "",
-       "see-also": ""
-   }
+  
 }

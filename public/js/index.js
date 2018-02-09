@@ -50,7 +50,10 @@ function addQuestion(c, v) {
     // A question may have a number of answers
     v.a.forEach((answer, i) => {
 
-        let note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
+        let note = '';
+        if(answer.note){
+            note = Array.isArray(answer.note) ? answer.note.join('') : answer.note;
+        }
 
         let ansContainer = $(`<div class=answer>${note}</div>`);
         qContainer.append(ansContainer);
@@ -93,13 +96,13 @@ function mirrorify(container, code) {
 }
 
 /*
-*/
+ */
 function populateDOM(json) {
     json.questions.forEach((v, i, arr) => {
         addQuestion($('#questions'), v);
     });
 }
 
-var json = fetch('public/data/test.json')
+var json = fetch('public/data/questions.json')
     .then(resp => resp.json())
     .then(data => populateDOM(data));

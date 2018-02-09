@@ -23,6 +23,181 @@
         },
 
         {
+            "id": 48,
+            "name": "",
+            "q": [
+            {
+                "note": "Create an iterable that returns only zeros."
+            }],
+            "a": [
+                {
+                    "code": [
+                        "let zerosForever = {",
+                        "  [Symbol.iterator]: function(){ return this; },",
+                        "  next: function(){ return {done: false; value: 0} }",
+                        "};"
+                    ]
+                },
+
+                {
+                    "note": "A bit more succinctly...",
+                    "code": [
+                        "let zerosForever = {",
+                        "  [Symbol.iterator](){ return this; },",
+                        "  next(){return {value: 0, done: false} }",
+                        "};"
+                    ]
+                }
+
+            ],
+            "tags": "",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 47,
+            "name": "WeakMaps, Maps, WeakSets, Sets iterable?",
+            "q": [
+            {
+                "note": "Of the following, which are iterable? Maps, WeakMaps, Sets, WeakMaps"
+            }],
+            "a": [
+            {
+                "note": "Maps and Sets are iterable, but WeakMaps and WeakSets are not iterable."
+            }],
+            "tags": "",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 46,
+            "name": "Example of a custom es6 Iterator",
+            "q": [
+            {
+                "note": "Provide an example of a custom es6 iterator"
+            }],
+            "a": [
+            {
+                "code": [
+                    "var it = {",
+                    "  i: 0,",
+                    "  [Symbol.iterator](){ return this; },",
+                    "  next(){",
+                    "    return {done: false, value: this.i++}",
+                    "  }",
+                    "};"
+                ]
+            }],
+            "tags": "es6,iterator",
+            "complexity": "5",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+
+        {
+            "id": 45,
+            "name": "Example of a simple es6 Iterator",
+            "q": [
+            {
+                "note": "Provide an example of a es6 array iterator"
+            }],
+            "a": [
+            {
+                "code": [
+                    "var arr = [1, 2, 3];",
+                    "var it = arr[Symbol.iterator]();",
+                    "it.next();",
+                    "▶ {value: 1, done: false}"
+                ]
+            }],
+            "tags": "es6,iterator",
+            "complexity": "4",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 44,
+            "name": "Example of string interpolation using a 3D vector",
+            "q": [
+            {
+                "note": "Provide an example of string interpolation using coordinates.",
+                "code": [
+                    "function printCoords(x, y, z){",
+                    " // ...",
+                    "}"
+                ]
+            }],
+            "a": [
+            {
+                "code": [
+                    "function printCoords(x, y, z){",
+                    "  console.log('[' + x + ', ' + y + ', ' + z + ']');",
+                    "  console.log(`[${x}, ${y}, ${z}]`);",
+                    "}"
+                ]
+            }],
+            "tags": "es6,string,string interpolation",
+            "complexity": "2",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 43,
+            "name": "Log var variable before declaration.",
+            "q": [
+            {
+                "note": "What happens if you use a var variable before it gets declared?",
+                "code": [
+                    "console.log(a);",
+                    "var a = 10;"
+                ]
+            }],
+            "a": [
+            {
+                "note": "<b>undefined</b>. The variable declaration is hoisted to the top of the scope, however the definition isn’t. That’s why we don’t receive a reference error."
+            }],
+            "tags": "variable",
+            "complexity": "3",
+            "references": [],
+            "notes": "",
+            "see-also": ""
+        },
+
+        {
+            "id": 42,
+            "name": "performance.now()",
+            "q": [
+            {
+                "note": "What is performance.now?"
+            }],
+            "a": [
+            {
+                "note": "",
+                "code": [
+                    ""
+                ]
+            }],
+            "tags": "timing",
+            "complexity": 3,
+            "references": [],
+            "notes": "",
+            "see-also": "",
+            "status": "draft"
+        },
+
+        {
             "id": 41,
             "name": "Promise example",
             "q": [
@@ -528,7 +703,9 @@
             "complexity": "1",
             "references": [],
             "grade": "10",
-            "notes": ""
+            "notes": "",
+            "see-also": "",
+            "status": "published"
         },
 
         {
@@ -560,7 +737,9 @@
             "complexity": "4",
             "references": [],
             "grade": 7,
-            "notes": ""
+            "notes": "",
+            "see-also": "",
+            "status": "published"
         },
 
         {
@@ -712,13 +891,14 @@
             "name": "Way to create empty array",
             "q": [
             {
-                "note": "List 5 ways to instantiate an empty array"
+                "note": "List 6 ways to instantiate an empty array"
             }],
 
             "a": [
             {
                 "note": "",
                 "code": [
+                    "Array.from('');",
                     "new Array(0);   // explicit size of zero",
                     "new Array();    // implicit size of zero",
                     "new Array;      // we can omit parenthesies",

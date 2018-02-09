@@ -1,17 +1,22 @@
- {
-     "id": 0,
-     "name": "template",
-     "q": "",
-     "a": [
-     {
-         "note": "",
-         "code": [
-             ""
-         ]
-     }],
-     "tags": "",
-     "complexity": "",
-     "references": [],
-     "notes": "",
-     "see-also": ""
- },
+{
+    "id": 0,
+    "name": "Short name of question",
+    "q": [
+    {
+        "note": "Question to user",
+        "code": [
+            "// optional code snippets..."
+        ]
+    }],
+    "a": [
+    {
+        "code": [
+            "// answer"
+        ]
+    }],
+    "tags": "",
+    "complexity": "0",
+    "references": [],
+    "notes": "",
+    "see-also": ""
+}

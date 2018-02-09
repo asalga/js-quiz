@@ -6,6 +6,5 @@
 ## TODO
 
  - Only add 'see also' links to published questions
- - Update question to hold codemirror code textarea
- 
+ - Allow array of string in "notes" section of question
  
