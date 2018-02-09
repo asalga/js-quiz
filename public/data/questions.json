@@ -869,13 +869,14 @@
             "name": "Way to create empty array",
             "q": [
             {
-                "note": "List 5 ways to instantiate an empty array"
+                "note": "List 6 ways to instantiate an empty array"
             }],
 
             "a": [
             {
                 "note": "",
                 "code": [
+                    "Array.from('');",
                     "new Array(0);   // explicit size of zero",
                     "new Array();    // implicit size of zero",
                     "new Array;      // we can omit parenthesies",
