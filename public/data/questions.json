@@ -1096,7 +1096,13 @@
             "a": [
             {
                 "note": [
-                    "We pass in the current fragment and the radius of the circle."
+                    "The arguments are the current fragment and the radius of the circle.",
+                    "We calculate the difference between these two variables. If the result is zero ",
+                    "it means that the point is directly on the edge of the circle.",
+                    "A negative value means that the length of the vector was less than the radius which means the point is inside the circle.",
+                    "In addition to the sign, the value returned also tells us how *far* the fragment is from the edge of the circle.",
+                    "Finally if the returned value is positive, it means the vector was greater than the radius, therefore outside the edge of the circle. Again",
+                    "the magnitude returned tells us by how *far* the fragment is from the edge."
                 ],
                 "code": [
                     "float circleSDF(vec2 p, float r){",
