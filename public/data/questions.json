@@ -1082,8 +1082,43 @@
         },
 
 
+
+
+
         {
             "id": 27,
+            "name": "",
+            "q": [
+            {
+                "note": "Write a circle signed distance function"
+            }],
+
+            "a": [
+            {
+                "note": [
+                    "We pass in the current fragment and the radius of the circle."
+                ],
+                "code": [
+                    "float circleSDF(vec2 p, float r){",
+                    "  return length(p) - r;",
+                    "}"
+                ]
+            }],
+            "tags": "gfx,glsl",
+            "complexity": "8",
+            "references": [
+                ""
+            ],
+            "notes": "notes",
+            "see-also": "",
+            "status": "published"
+        },
+
+
+
+
+        {
+            "id": 28,
             "name": "",
             "q": [
             {
@@ -1092,9 +1127,9 @@
 
             "a": [
             {
-                "note": "asdfasdf",
+                "note": "",
                 "code": [
-                    "float ringSDF(vec2 p, float r, float",
+                    "float ringSDF(vec2 p, float r, float w){",
                     "  return abs(length(p) - radius * 0.5) - width;",
                     "}"
                 ]
@@ -1107,6 +1142,30 @@
             "notes": "notes",
             "see-also": "",
             "status": "published"
+        },
+
+
+        {
+            "id": 29,
+            "name": "",
+            "q": [
+            {
+                "note": "Write a line SDF"
+            }],
+            "a": [
+            {
+                "note": "",
+                "code": [
+                ]
+            }],
+            "tags": "gfx,glsl",
+            "complexity": "8",
+            "references": [
+                ""
+            ],
+            "notes": "notes",
+            "see-also": "",
+            "status": "draft"
         }
 
     ]
