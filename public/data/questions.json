@@ -1079,8 +1079,35 @@
             "notes": "",
             "see-also": "",
             "status": "draft"
-        }
+        },
 
+
+        {
+            "id": 27,
+            "name": "",
+            "q": [
+            {
+                "note": "Write a ring signed distance function"
+            }],
+
+            "a": [
+            {
+                "note": "asdfasdf",
+                "code": [
+                    "float ringSDF(vec2 p, float r, float",
+                    "  return abs(length(p) - radius * 0.5) - width;",
+                    "}"
+                ]
+            }],
+            "tags": "gfx,glsl",
+            "complexity": "8",
+            "references": [
+                ""
+            ],
+            "notes": "notes",
+            "see-also": "",
+            "status": "published"
+        }
 
     ]
 }
